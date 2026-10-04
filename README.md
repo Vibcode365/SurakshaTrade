@@ -4,7 +4,7 @@ A comprehensive financial investor safety platform featuring real-time verificat
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 ### 1. Finfluencer Video & Reel Authenticity Auditor
 - Paste any YouTube video, Short, Instagram Reel, or social media link to audit claims in real-time.
@@ -27,7 +27,7 @@ A comprehensive financial investor safety platform featuring real-time verificat
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend**: React, Tailwind CSS, Lucide Icons
 - **Backend**: Node.js, Express, Vite
@@ -35,7 +35,7 @@ A comprehensive financial investor safety platform featuring real-time verificat
 
 ---
 
-## 💻 Getting Started Locally
+##  Getting Started Locally
 
 ### Prerequisites
 - [Node.js](https://nodejs.org) (v18 or higher)
@@ -62,7 +62,7 @@ The application will be live at `http://localhost:3000`.
 
 ---
 
-## 📦 Building for Production
+##  Building for Production
 
 ```bash
 npm run build
@@ -71,5 +71,5 @@ npm start
 
 ---
 
-## 📜 License
+##  License
 MIT License. Open for educational and investor-protection purposes.
