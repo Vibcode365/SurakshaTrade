@@ -1,0 +1,6 @@
+{
+  "name": "SurakshaTrade - Financial Safeguard & Intelligence Suite",
+  "description": "Investor protection suite featuring blockchain broker credential verification, high-accuracy multilingual Bhasha glossary, scam forensics, shell company audit, and paper trading tilt guard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

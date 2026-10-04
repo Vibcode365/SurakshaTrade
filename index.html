@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurakshaTrade - Financial Safeguard & Intelligence Suite</title>
+  <meta name="description" content="Investor protection suite featuring blockchain broker credential verification, high-accuracy multilingual Bhasha glossary, scam forensics, shell company audit, and paper trading tilt guard.">
+  <meta property="og:title" content="SurakshaTrade - Financial Safeguard & Intelligence Suite">
+  <meta property="og:description" content="Investor protection suite featuring blockchain broker credential verification, high-accuracy multilingual Bhasha glossary, scam forensics, shell company audit, and paper trading tilt guard.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Accessible Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Tesseract.js OCR CDN (Client-Side Local Zero-Retention Text Extraction) -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          fontSize: {
+            'base': '1.125rem',
+            'lg': '1.25rem',
+            'xl': '1.4rem',
+            '2xl': '1.65rem',
+            '3xl': '2rem',
+            '4xl': '2.35rem',
+          },
+          colors: {
+            beige: {
+              50: '#FDFCF9',
+              100: '#F5EFEB',
+              200: '#EAE1D7',
+              300: '#DFD2C4',
+              400: '#C7B4A0',
+            },
+            umber: {
+              950: '#170913',
+              900: '#24101E',
+              850: '#2F1628',
+              800: '#381A30',
+              700: '#522747',
+              600: '#733963',
+            },
+            lilac: {
+              50: '#FAF5FF',
+              100: '#F3E8FF',
+              200: '#E9D5FF',
+              300: '#D8B4FE',
+              400: '#C084FC',
+              500: '#A855F7',
+              600: '#8A3FFC',
+              700: '#7326D9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes deepBreathe {
+      0%, 100% { transform: scale(1); opacity: 0.7; filter: drop-shadow(0 0 14px rgba(138, 63, 252, 0.45)); }
+      50% { transform: scale(1.24); opacity: 1; filter: drop-shadow(0 0 30px rgba(192, 132, 252, 0.85)); }
+    }
+    .breathe-ring { animation: deepBreathe 8s infinite ease-in-out; }
+
+    .beige-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2D7CB;
+      box-shadow: 0 4px 22px -3px rgba(36, 16, 30, 0.04);
+    }
+
+    .nav-link {
+      color: #381A30;
+      background: transparent;
+      border: 1.5px solid transparent;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-link:hover {
+      background-color: #EAE1D7;
+      color: #7326D9;
+    }
+    .nav-link.active {
+      background-color: #8A3FFC !important;
+      color: #FFFFFF !important;
+      border-color: #7326D9 !important;
+      box-shadow: 0 4px 16px -2px rgba(138, 63, 252, 0.35) !important;
+    }
+
+    body.lite-mode {
+      background-color: #FAF8F5 !important;
+    }
+    body.lite-mode canvas, body.lite-mode .breathe-ring {
+      display: none !important;
+    }
+
+    body.dark-mode {
+      background-color: #0E0713 !important;
+      background-image: radial-gradient(circle at 50% 0%, rgba(138, 63, 252, 0.09), transparent 45%), radial-gradient(circle at 10% 40%, rgba(82, 39, 71, 0.15), transparent 40%) !important;
+      background-attachment: fixed !important;
+      color: #F0E8E1 !important;
+    }
+    body.dark-mode header,
+    body.dark-mode aside,
+    body.dark-mode footer,
+    body.dark-mode .beige-card,
+    body.dark-mode .bg-white {
+      background-color: #1A0D1B !important;
+      color: #F0E8E1 !important;
+      border-color: #351C36 !important;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(216, 180, 254, 0.04) !important;
+    }
+    body.dark-mode .bg-beige-50,
+    body.dark-mode .bg-beige-100,
+    body.dark-mode .bg-beige-200,
+    body.dark-mode .bg-beige-50\/70 {
+      background-color: #231224 !important;
+      color: #F0E8E1 !important;
+      border-color: #3D203E !important;
+    }
+    body.dark-mode input,
+    body.dark-mode select,
+    body.dark-mode textarea {
+      background-color: #140915 !important;
+      color: #FAF5F0 !important;
+      border-color: #4A274C !important;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35) !important;
+    }
+    body.dark-mode input:focus,
+    body.dark-mode select:focus,
+    body.dark-mode textarea:focus {
+      border-color: #A855F7 !important;
+      box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.35) !important;
+    }
+    body.dark-mode ::placeholder {
+      color: #8C7086 !important;
+    }
+    body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode strong {
+      color: #FAF4EE !important;
+    }
+    body.dark-mode .text-umber-950,
+    body.dark-mode .text-umber-900 {
+      color: #F2E8DF !important;
+    }
+    body.dark-mode .text-umber-850,
+    body.dark-mode .text-umber-800 {
+      color: #E2D3C4 !important;
+    }
+    body.dark-mode .text-umber-700,
+    body.dark-mode .text-umber-600 {
+      color: #BFA898 !important;
+    }
+    body.dark-mode .text-umber-500,
+    body.dark-mode .text-umber-400 {
+      color: #8E7788 !important;
+    }
+    body.dark-mode .border-beige-200,
+    body.dark-mode .border-beige-300 {
+      border-color: #351C36 !important;
+    }
+
+    /* Jewel Semantic Accents in Dark Mode */
+    body.dark-mode .bg-emerald-50,
+    body.dark-mode .bg-emerald-50\/70,
+    body.dark-mode .bg-emerald-50\/80,
+    body.dark-mode .bg-emerald-50\/90 {
+      background-color: rgba(6, 78, 59, 0.35) !important;
+      border-color: rgba(16, 185, 129, 0.4) !important;
+      color: #6EE7B7 !important;
+    }
+    body.dark-mode .bg-emerald-100,
+    body.dark-mode .bg-emerald-100\/70,
+    body.dark-mode .bg-emerald-200 {
+      background-color: rgba(6, 78, 59, 0.6) !important;
+      border-color: rgba(52, 211, 153, 0.5) !important;
+      color: #A7F3D0 !important;
+    }
+    body.dark-mode .text-emerald-950,
+    body.dark-mode .text-emerald-900,
+    body.dark-mode .text-emerald-800,
+    body.dark-mode .text-emerald-700 {
+      color: #6EE7B7 !important;
+    }
+    body.dark-mode .text-emerald-600,
+    body.dark-mode .text-emerald-500 {
+      color: #34D399 !important;
+    }
+
+    body.dark-mode .bg-rose-50,
+    body.dark-mode .bg-rose-50\/70,
+    body.dark-mode .bg-rose-50\/80,
+    body.dark-mode .bg-rose-50\/90 {
+      background-color: rgba(136, 19, 55, 0.35) !important;
+      border-color: rgba(244, 63, 94, 0.4) !important;
+      color: #FDA4AF !important;
+    }
+    body.dark-mode .bg-rose-100,
+    body.dark-mode .bg-rose-200 {
+      background-color: rgba(136, 19, 55, 0.6) !important;
+      border-color: rgba(251, 113, 133, 0.5) !important;
+      color: #FECDD3 !important;
+    }
+    body.dark-mode .text-rose-950,
+    body.dark-mode .text-rose-900,
+    body.dark-mode .text-rose-800,
+    body.dark-mode .text-rose-700,
+    body.dark-mode .text-rose-600 {
+      color: #FDA4AF !important;
+    }
+
+    body.dark-mode .bg-amber-50,
+    body.dark-mode .bg-amber-100 {
+      background-color: rgba(120, 53, 15, 0.38) !important;
+      border-color: rgba(245, 158, 11, 0.4) !important;
+      color: #FCD34D !important;
+    }
+    body.dark-mode .text-amber-950,
+    body.dark-mode .text-amber-900,
+    body.dark-mode .text-amber-800,
+    body.dark-mode .text-amber-700 {
+      color: #FCD34D !important;
+    }
+
+    body.dark-mode .bg-lilac-50,
+    body.dark-mode .bg-lilac-50\/50 {
+      background-color: rgba(138, 63, 252, 0.16) !important;
+      border-color: rgba(168, 85, 247, 0.35) !important;
+      color: #E9D5FF !important;
+    }
+    body.dark-mode .bg-lilac-100 {
+      background-color: rgba(138, 63, 252, 0.3) !important;
+      border-color: rgba(192, 132, 252, 0.4) !important;
+      color: #F3E8FF !important;
+    }
+    body.dark-mode .bg-lilac-600 {
+      background-color: #8A3FFC !important;
+      box-shadow: 0 4px 18px -2px rgba(138, 63, 252, 0.5) !important;
+    }
+    body.dark-mode .bg-lilac-600:hover {
+      background-color: #9D5BFC !important;
+    }
+    body.dark-mode .text-lilac-700,
+    body.dark-mode .text-lilac-600,
+    body.dark-mode .text-lilac-800,
+    body.dark-mode .text-lilac-900 {
+      color: #D8B4FE !important;
+    }
+
+    body.dark-mode .bg-sky-50,
+    body.dark-mode .bg-sky-100 {
+      background-color: rgba(14, 116, 144, 0.32) !important;
+      border-color: rgba(56, 189, 248, 0.4) !important;
+      color: #7DD3FC !important;
+    }
+    body.dark-mode .text-sky-800,
+    body.dark-mode .text-sky-700 {
+      color: #7DD3FC !important;
+    }
+
+    /* Monospace / Terminal Elements, Tables, Kbd */
+    body.dark-mode .font-mono {
+      color: #E2D7FC !important;
+    }
+    body.dark-mode thead {
+      background-color: #170A18 !important;
+      color: #D8B4FE !important;
+      border-color: #381C37 !important;
+    }
+    body.dark-mode tr.hover\:bg-beige-50:hover,
+    body.dark-mode tr:hover {
+      background-color: #271428 !important;
+    }
+    body.dark-mode .divide-beige-200 > :not([hidden]) ~ :not([hidden]) {
+      border-color: #311932 !important;
+    }
+    body.dark-mode kbd {
+      background-color: #2A152C !important;
+      color: #F5EEE9 !important;
+      border-color: #4A274C !important;
+    }
+    body.dark-mode #scamMeterPin > div:first-child {
+      background-color: #FAF4EE !important;
+      border-color: #1A0D1B !important;
+    }
+    body.dark-mode #scamMeterPin > div:first-child > div {
+      background-color: #8A3FFC !important;
+    }
+    body.dark-mode #scamMeterPin > div:last-child {
+      background-color: #FAF4EE !important;
+    }
+
+    body.dark-mode .nav-link {
+      color: #D6C5B5 !important;
+    }
+    body.dark-mode .nav-link:hover {
+      background-color: #2D162F !important;
+      color: #E9D5FF !important;
+    }
+    body.dark-mode .nav-link.active {
+      background: linear-gradient(135deg, #8A3FFC 0%, #7326D9 100%) !important;
+      color: #FFFFFF !important;
+      border-color: #A855F7 !important;
+      box-shadow: 0 4px 20px -2px rgba(168, 85, 247, 0.5) !important;
+    }
+    body.dark-mode #stockDropdown div {
+      background-color: #1F0F20 !important;
+      border-color: #351C36 !important;
+      color: #F0E8E1 !important;
+    }
+    body.dark-mode #stockDropdown div:hover {
+      background-color: #351A37 !important;
+    }
+    body.dark-mode #tiltModal > div,
+    body.dark-mode #oauthModal > div,
+    body.dark-mode #fraudReportModal > div,
+    body.dark-mode #videoReportModal > div {
+      background-color: #1E0D1F !important;
+      border-color: #4F2750 !important;
+      color: #FAF4EE !important;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8) !important;
+    }
+  </style>
+</head>
+<body class="bg-beige-100 text-umber-900 min-h-screen flex flex-col font-sans text-base antialiased transition-colors duration-200">
+
+  <!-- Top Header Navigation -->
+  <header class="sticky top-0 z-40 bg-beige-100/95 backdrop-blur-md border-b border-beige-300 px-6 py-4 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="showFeature('glossary')">
+        <div class="bg-umber-900 p-2.5 rounded-2xl text-beige-50 shadow-md">
+          <i data-lucide="shield-check" class="w-7 h-7 stroke-[2.5]"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-extrabold tracking-tight font-display text-umber-950 flex items-center gap-2">
+            SurakshaTrade
+            <span class="text-xs font-sans font-bold bg-lilac-100 text-lilac-700 px-2.5 py-0.5 rounded-full border border-lilac-300">CORE</span>
+          </span>
+          <p class="text-xs font-semibold text-umber-700 -mt-0.5">Investor Protection & Cognitive Safeguard</p>
+        </div>
+      </div>
+
+      <!-- Website Feature Links -->
+      <nav class="hidden lg:flex items-center space-x-2 text-base font-bold">
+        <button onclick="showFeature('glossary')" id="nav-glossary" class="nav-link active px-3.5 py-2 rounded-xl">
+          Bhasha Lexicon
+        </button>
+        <!-- Blockchain Broker Auth -->
+        <button onclick="showFeature('broker-verify')" id="nav-broker-verify" class="nav-link px-3.5 py-2 rounded-xl flex items-center gap-1.5">
+          <i data-lucide="blocks" class="w-4 h-4 text-lilac-600"></i>
+          <span>Broker Ledger</span>
+        </button>
+        <button onclick="showFeature('scam')" id="nav-scam" class="nav-link px-3.5 py-2 rounded-xl">
+          Scam Inspector
+        </button>
+        <!-- NEW FEATURE: Video & Reel Auditor -->
+        <button onclick="showFeature('video-audit')" id="nav-video-audit" class="nav-link px-3.5 py-2 rounded-xl flex items-center gap-1.5">
+          <i data-lucide="video" class="w-4 h-4 text-lilac-600"></i>
+          <span>Video & Reel Audit</span>
+        </button>
+        <button onclick="showFeature('stock')" id="nav-stock" class="nav-link px-3.5 py-2 rounded-xl">
+          Stock & Shell Audit
+        </button>
+        <button onclick="showFeature('paper')" id="nav-paper" class="nav-link px-3.5 py-2 rounded-xl">
+          Paper Trading
+        </button>
+        <button onclick="showFeature('grievance')" id="nav-grievance" class="nav-link px-3.5 py-2 rounded-xl">
+          Govt Portals
+        </button>
+      </nav>
+
+      <!-- Utility Controls -->
+      <div class="flex items-center space-x-2.5">
+        <button id="darkModeBtn" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode" class="flex items-center space-x-1.5 px-3 py-2 rounded-xl border border-beige-300 bg-white text-umber-900 text-xs font-bold transition hover:border-lilac-400 shadow-sm">
+          <i id="darkModeIcon" data-lucide="moon" class="w-4 h-4 text-lilac-600"></i>
+          <span id="darkModeLabel">Dark Mode</span>
+        </button>
+
+        <button id="liteModeBtn" onclick="toggleLiteMode()" title="Toggle 2G Low-Speed Mode" class="flex items-center space-x-1.5 px-3 py-2 rounded-xl border border-beige-300 bg-white text-umber-900 text-xs font-bold transition hover:border-lilac-400 shadow-sm">
+          <i data-lucide="zap" class="w-4 h-4 text-lilac-600"></i>
+          <span id="liteModeLabel">Lite: OFF</span>
+        </button>
+
+        <div id="brokerBadge" class="hidden items-center space-x-2 bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs px-3.5 py-1.5 rounded-full font-bold">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping"></span>
+          <span id="brokerName">Linked</span>
+        </div>
+        
+        <button onclick="openOAuthModal()" class="flex items-center space-x-2 bg-umber-900 hover:bg-umber-800 text-beige-50 text-sm font-bold px-4 py-2 rounded-xl transition shadow-sm">
+          <i data-lucide="link" class="w-4 h-4 text-lilac-300"></i>
+          <span>Broker OAuth</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="flex lg:hidden overflow-x-auto space-x-2 pt-3 text-sm font-bold text-umber-800">
+      <button onclick="showFeature('glossary')" id="mob-glossary" class="nav-link active whitespace-nowrap px-3 py-1.5 rounded-lg">Bhasha Lexicon</button>
+      <button onclick="showFeature('broker-verify')" id="mob-broker-verify" class="nav-link whitespace-nowrap px-3 py-1.5 rounded-lg flex items-center gap-1">
+        <i data-lucide="blocks" class="w-3.5 h-3.5"></i>
+        <span>Broker Ledger</span>
+      </button>
+      <button onclick="showFeature('scam')" id="mob-scam" class="nav-link whitespace-nowrap px-3 py-1.5 rounded-lg">Scam Check</button>
+      <button onclick="showFeature('video-audit')" id="mob-video-audit" class="nav-link whitespace-nowrap px-3 py-1.5 rounded-lg flex items-center gap-1">
+        <i data-lucide="video" class="w-3.5 h-3.5"></i>
+        <span>Video Audit</span>
+      </button>
+      <button onclick="showFeature('stock')" id="mob-stock" class="nav-link whitespace-nowrap px-3 py-1.5 rounded-lg">Stock Screener</button>
+      <button onclick="showFeature('paper')" id="mob-paper" class="nav-link whitespace-nowrap px-3 py-1.5 rounded-lg">Paper Trading</button>
+      <button onclick="showFeature('grievance')" id="mob-grievance" class="nav-link whitespace-nowrap px-3 py-1.5 rounded-lg">Govt Portals</button>
+    </div>
+  </header>
+
+  <!-- Live Status Bar -->
+  <aside aria-label="Status Bar" class="bg-beige-200/80 border-b border-beige-300 py-2.5 px-6">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-sm font-semibold text-umber-800">
+      <div class="flex items-center space-x-3">
+        <span class="flex items-center space-x-1.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+          <span>RegChain Node: Block #3,892,104 Synced</span>
+        </span>
+        <span class="text-beige-400">•</span>
+        <span>Paper Capital: <strong id="stripCapital" class="text-umber-950 font-extrabold">₹10,00,000.00</strong></span>
+        <span class="text-beige-400">•</span>
+        <span class="flex items-center space-x-1.5">
+          <i data-lucide="heart-pulse" class="w-4 h-4 text-lilac-600"></i>
+          <span id="stripWatchdogStatus">Revenge Tilt Watchdog: <strong>Engaged (3 orders / 45s)</strong></span>
+        </span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-umber-700">Cyber Crime Helpline:</span>
+        <a href="tel:1930" class="bg-rose-100 text-rose-800 border border-rose-300 px-2.5 py-0.5 rounded-md font-extrabold hover:bg-rose-200 transition">1930 (Toll Free)</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main View Container -->
+  <main class="max-w-6xl mx-auto w-full p-6 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== FEATURE 1: LIVE FINANCIAL BHASHA GLOSSARY ==================== -->
+    <section id="view-glossary" class="feature-view block space-y-6">
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-display text-umber-950">
+          Live Financial Bhasha Glossary & Voice Reader
+        </h1>
+        <p class="text-lg text-umber-800">
+          Crystal-clear stock market explanations in your native language. High-accuracy translations for Punjabi, Hindi, Tamil, and other scheduled languages with zero machine gibberish.
+        </p>
+      </div>
+
+      <div class="beige-card rounded-3xl p-7 space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label class="text-xs font-extrabold uppercase tracking-wider text-umber-700 block mb-1.5">Target Regional Language</label>
+            <select id="glossaryLang" onchange="fetchLiveDefinition()" class="w-full bg-beige-50 border border-beige-300 p-3.5 rounded-2xl text-base font-semibold text-umber-950 focus:outline-none focus:border-lilac-600">
+              <option value="pa" data-tts="pa-IN">Punjabi (ਪੰਜਾਬੀ)</option>
+              <option value="hi" data-tts="hi-IN" selected>Hindi (हिन्दी)</option>
+              <option value="bn" data-tts="bn-IN">Bengali (বাংলা)</option>
+              <option value="ta" data-tts="ta-IN">Tamil (தமிழ்)</option>
+              <option value="te" data-tts="te-IN">Telugu (తెలుగు)</option>
+              <option value="mr" data-tts="mr-IN">Marathi (मराठी)</option>
+              <option value="gu" data-tts="gu-IN">Gujarati (ગુજરાતી)</option>
+              <option value="kn" data-tts="kn-IN">Kannada (ಕನ್ನಡ)</option>
+              <option value="ml" data-tts="ml-IN">Malayalam (മലയാളം)</option>
+              <option value="or" data-tts="or-IN">Odia (ଓଡ଼ିଆ)</option>
+              <option value="en" data-tts="en-IN">English (Indian Accent)</option>
+            </select>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-xs font-extrabold uppercase tracking-wider text-umber-700 block mb-1.5">Type Finance Term or Dictate via Mic</label>
+            <div class="flex space-x-2.5">
+              <input type="text" id="glossaryQuery" value="Option" placeholder="e.g. Option, Demat, Stop Loss, Nifty, SIP, Dividend, IPO..." class="flex-1 bg-beige-50 border border-beige-300 p-3.5 rounded-2xl text-base font-medium text-umber-950 placeholder-umber-400 focus:outline-none focus:border-lilac-600" />
+              
+              <button id="micBtn" onclick="startVoiceRecognition()" title="Dictate query into microphone" class="bg-beige-200 hover:bg-beige-300 border border-beige-300 text-umber-900 px-4 rounded-2xl transition flex items-center justify-center">
+                <i data-lucide="mic" class="w-6 h-6 text-lilac-700"></i>
+              </button>
+
+              <button onclick="fetchLiveDefinition()" class="bg-lilac-600 hover:bg-lilac-700 text-white font-bold px-6 rounded-2xl text-base transition shadow-sm">
+                Translate
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Term Filter Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs font-bold text-umber-800">
+          <span class="text-umber-600 uppercase tracking-wider text-[11px] whitespace-nowrap">Suggested:</span>
+          <button onclick="quickSelectTerm('Option')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">Option</button>
+          <button onclick="quickSelectTerm('Demat Account')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">Demat</button>
+          <button onclick="quickSelectTerm('IPO')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">IPO</button>
+          <button onclick="quickSelectTerm('Stop Loss')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">Stop Loss</button>
+          <button onclick="quickSelectTerm('Nifty 50')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">Nifty 50</button>
+          <button onclick="quickSelectTerm('SIP')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">SIP</button>
+          <button onclick="quickSelectTerm('P/E Ratio')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">P/E Ratio</button>
+          <button onclick="quickSelectTerm('Bull Market')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">Bull</button>
+          <button onclick="quickSelectTerm('Circuit Breaker')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">Circuit Breaker</button>
+          <button onclick="quickSelectTerm('Short Selling')" class="bg-beige-100 hover:bg-beige-200 border border-beige-300 px-3 py-1.5 rounded-xl whitespace-nowrap transition">Short Selling</button>
+        </div>
+
+        <div id="micIndicator" class="hidden text-sm text-rose-600 font-bold flex items-center space-x-2 pt-1 animate-pulse">
+          <span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+          <span>Microphone active... Speak your financial query now!</span>
+        </div>
+
+        <!-- Output Display -->
+        <div class="bg-beige-50 rounded-2xl p-6 border border-beige-300 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-beige-200 gap-3">
+            <div>
+              <span id="glossaryScopeBadge" class="text-xs font-bold text-lilac-700 bg-lilac-100 border border-lilac-200 px-3 py-1 rounded-full uppercase tracking-wider">
+                Financial Market Scope Verified
+              </span>
+              <h3 id="termDisplay" class="text-2xl font-extrabold text-umber-950 font-display mt-1.5">Option (Finance)</h3>
+            </div>
+            
+            <button id="ttsButton" onclick="readAloudDefinition()" class="flex items-center space-x-2 bg-white hover:bg-beige-100 border border-beige-300 px-4 py-2.5 rounded-xl text-sm font-bold text-lilac-700 transition shadow-sm self-start sm:self-auto">
+              <i data-lucide="volume-2" class="w-5 h-5"></i>
+              <span id="ttsBtnLabel">Read Aloud (TTS)</span>
+            </button>
+          </div>
+
+          <div id="definitionBody" class="text-lg text-umber-800 leading-relaxed min-h-[70px]">
+            Loading verified explanation...
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURE 2 (NEW): BLOCKCHAIN BROKER CREDENTIAL AUTHENTICATION ==================== -->
+    <section id="view-broker-verify" class="feature-view hidden space-y-6">
+      <div class="text-center space-y-2 max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-lilac-100 text-lilac-800 border border-lilac-300 px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider mb-1">
+          <i data-lucide="link-2" class="w-3.5 h-3.5 text-lilac-700"></i>
+          <span>Bharat RegChain • Decentralized Credential Ledger</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-display text-umber-950">
+          Stock Broker Blockchain Credential Verification
+        </h1>
+        <p class="text-lg text-umber-800">
+          Verify SEBI license authenticity, authorized official domains, and cryptographic Merkle proofs anchored to the National Regulatory Consortium Ledger to stop broker cloning and phishing scams.
+        </p>
+      </div>
+
+      <!-- Verification Cockpit Card -->
+      <div class="beige-card rounded-3xl p-7 space-y-5">
+        
+        <!-- Search & Query Form -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="md:col-span-3">
+            <label class="text-xs font-extrabold uppercase tracking-wider text-umber-700 block mb-1.5">
+              SEBI Registration No. / Broker Legal Name / Domain URL
+            </label>
+            <div class="flex space-x-2.5">
+              <div class="relative flex-1">
+                <i data-lucide="search" class="w-5 h-5 text-umber-500 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                <input type="text" id="brokerSearchInput" value="INZ000031633" placeholder="Enter INZ number (e.g., INZ000031633) or Broker Name (Zerodha, Angel One)..." class="w-full bg-beige-50 border border-beige-300 pl-12 pr-4 py-3.5 rounded-2xl text-base font-semibold text-umber-950 placeholder-umber-400 focus:outline-none focus:border-lilac-600" />
+              </div>
+              <button onclick="runBlockchainVerification()" class="bg-lilac-600 hover:bg-lilac-700 text-white font-bold px-6 rounded-2xl text-base transition shadow-sm flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                <span>Verify on Chain</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="text-xs font-extrabold uppercase tracking-wider text-umber-700 block mb-1.5">Network Node</label>
+            <div class="bg-beige-50 border border-beige-300 p-3 rounded-2xl flex items-center justify-between">
+              <div class="text-xs">
+                <div class="font-bold text-umber-950">RegChain v2.4</div>
+                <div class="text-[11px] text-emerald-700 font-semibold flex items-center gap-1 mt-0.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Consensus Validated
+                </div>
+              </div>
+              <span class="text-xs font-mono font-bold bg-lilac-100 text-lilac-700 px-2 py-0.5 rounded">NSE/BSE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Demo Profiles -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs font-bold text-umber-800">
+          <span class="text-umber-600 uppercase tracking-wider text-[11px] whitespace-nowrap">Test Profiles:</span>
+          <button onclick="loadBrokerDemo('INZ000031633')" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-900 px-3 py-1.5 rounded-xl whitespace-nowrap transition flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+            <span>Zerodha Broking (Verified Tier-1)</span>
+          </button>
+          <button onclick="loadBrokerDemo('INZ000161534')" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-900 px-3 py-1.5 rounded-xl whitespace-nowrap transition flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+            <span>Angel One Ltd (Verified)</span>
+          </button>
+          <button onclick="loadBrokerDemo('INZ999999999')" class="bg-rose-50 hover:bg-rose-100 border border-rose-300 text-rose-900 px-3 py-1.5 rounded-xl whitespace-nowrap transition flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-rose-600"></span>
+            <span>Kite VIP Elite (Spoofed Clone Scam)</span>
+          </button>
+          <button onclick="loadBrokerDemo('UNREGISTERED')" class="bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 px-3 py-1.5 rounded-xl whitespace-nowrap transition flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-amber-600"></span>
+            <span>Quantum Yield FX (Unlicensed Entity)</span>
+          </button>
+        </div>
+
+        <!-- Verification Progress Indicator (shown during scan) -->
+        <div id="blockchainAuditProgress" class="hidden bg-beige-50 rounded-2xl p-5 border border-beige-300 space-y-3">
+          <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-umber-700">
+            <span id="auditStepText">Connecting to Regulatory Node...</span>
+            <span id="auditPercentText">25%</span>
+          </div>
+          <div class="w-full bg-beige-200 rounded-full h-2 overflow-hidden">
+            <div id="auditProgressBar" class="bg-lilac-600 h-2 rounded-full transition-all duration-300" style="width: 25%"></div>
+          </div>
+          <div class="grid grid-cols-4 gap-2 text-center text-[11px] font-semibold text-umber-700">
+            <div id="pStep1" class="text-lilac-700 font-bold">1. Query Ledger</div>
+            <div id="pStep2">2. Merkle Root</div>
+            <div id="pStep3">3. Ed25519 Sign</div>
+            <div id="pStep4">4. Domain Audit</div>
+          </div>
+        </div>
+
+        <!-- Result Certificate Card -->
+        <div id="blockchainResultCard" class="space-y-4">
+          
+          <!-- Top Banner Status -->
+          <div id="brokerBanner" class="p-5 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-50 border-emerald-300">
+            <div class="space-y-0.5">
+              <div class="flex items-center gap-2">
+                <h3 id="brokerResultName" class="text-xl font-extrabold font-display text-umber-950">
+                  Zerodha Broking Limited
+                </h3>
+                <span id="brokerBadgeValid" class="inline-flex items-center gap-1 text-[11px] font-bold bg-emerald-200 text-emerald-900 border border-emerald-400 px-2 py-0.5 rounded-full">
+                  <i data-lucide="check-check" class="w-3 h-3"></i>
+                  Cryptographically Anchored
+                </span>
+              </div>
+              <p id="brokerResultSubtitle" class="text-sm text-umber-700">
+                SEBI Registration: <strong class="text-umber-900 font-mono">INZ000031633</strong> • NSE Member: 13942 • BSE Member: 6498 • MCX: 46025
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <span id="brokerVerificationStatusPill" class="text-xs px-4 py-2 rounded-xl font-extrabold uppercase tracking-wider bg-emerald-600 text-white shadow-sm flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                <span>GENUINE & COMPLIANT</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Deep Forensic Cryptographic Proof Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            
+            <!-- Column 1: On-Chain Block Seal & Cryptographic Hash -->
+            <div class="bg-white p-5 rounded-2xl border border-beige-300 space-y-3 shadow-sm">
+              <div class="flex items-center justify-between pb-2 border-b border-beige-200">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-umber-700 flex items-center gap-1.5">
+                  <i data-lucide="cpu" class="w-4 h-4 text-lilac-600"></i>
+                  <span>Ledger Hash Seal</span>
+                </span>
+                <span id="blockNumberBadge" class="text-[11px] font-mono font-bold bg-lilac-100 text-lilac-700 px-2 py-0.5 rounded">Block #3,892,104</span>
+              </div>
+
+              <div class="space-y-2 text-xs">
+                <div>
+                  <span class="text-umber-600 block text-[11px]">Credential SHA-256 Hash:</span>
+                  <div id="credentialHashText" class="font-mono text-[11px] bg-beige-50 border border-beige-200 p-2 rounded-xl break-all text-umber-950 font-bold">
+                    8f3e2b9c714d60a12e5f98bb3d4c7a1029e8471b0521c7e934a5d8f01c2b4e87
+                  </div>
+                </div>
+
+                <div>
+                  <span class="text-umber-600 block text-[11px]">Merkle Leaf Proof:</span>
+                  <div id="merkleProofText" class="font-mono text-[11px] text-emerald-800 bg-emerald-50 border border-emerald-200 p-2 rounded-xl flex items-center justify-between">
+                    <span class="truncate">Leaf #14 -> Root [0x4b7c...a90f]</span>
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-700 shrink-0"></i>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="text-umber-600 block text-[11px]">Regulator Ed25519 Authority Sign:</span>
+                  <div id="authoritySignText" class="font-mono text-[10px] text-umber-700 truncate">
+                    SEBI-Root-CA-2026-PUBKEY-98dfb...[VALID]
+                  </div>
+                </div>
+
+                <div class="pt-2 border-t border-beige-200 flex justify-between text-xs font-semibold text-umber-800">
+                  <span>Last Smart Audit:</span>
+                  <span id="lastAuditTime" class="text-umber-950 font-bold">Today, 04:30 AM IST</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Authorized Whitelist Domains (Anti-Phishing) -->
+            <div class="bg-white p-5 rounded-2xl border border-beige-300 space-y-3 shadow-sm">
+              <div class="flex items-center justify-between pb-2 border-b border-beige-200">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-umber-700 flex items-center gap-1.5">
+                  <i data-lucide="globe" class="w-4 h-4 text-emerald-600"></i>
+                  <span>Official Whitelist Domains</span>
+                </span>
+                <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Anti-Spoofing</span>
+              </div>
+
+              <p class="text-xs text-umber-700 leading-normal">
+                Scammers create look-alike domains. Only trade if the address bar matches these on-chain anchored records:
+              </p>
+
+              <div id="authorizedDomainsList" class="space-y-1.5">
+                <!-- Injected dynamically -->
+              </div>
+
+              <div class="pt-2 border-t border-beige-200">
+                <span class="text-[11px] font-bold text-umber-700 block">Verified SMS Sender Headers:</span>
+                <div id="verifiedHeadersList" class="flex flex-wrap gap-1.5 mt-1 text-xs font-mono font-bold text-umber-950">
+                  <!-- Injected dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 3: Statutory Escrow & Escrow Bank Accounts -->
+            <div class="bg-white p-5 rounded-2xl border border-beige-300 space-y-3 shadow-sm">
+              <div class="flex items-center justify-between pb-2 border-b border-beige-200">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-umber-700 flex items-center gap-1.5">
+                  <i data-lucide="landmark" class="w-4 h-4 text-amber-700"></i>
+                  <span>Client Fund Escrow Proof</span>
+                </span>
+                <span id="escrowStatusTag" class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">HDFC / ICICI</span>
+              </div>
+
+              <p class="text-xs text-umber-700 leading-normal">
+                Never transfer funds to personal savings or private UPI IDs. Regulated brokers must collect funds into designated client escrow accounts:
+              </p>
+
+              <div class="bg-beige-50 p-3 rounded-xl border border-beige-200 space-y-1.5 text-xs">
+                <div class="flex justify-between">
+                  <span class="text-umber-600">Escrow Type:</span>
+                  <span id="escrowType" class="font-bold text-umber-950">SEBI-Mandated USCNB Account</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-umber-600">Investor Protection Fund:</span>
+                  <span id="ipfStatus" class="font-bold text-emerald-700">Active (Up to ₹25 Lakhs)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-umber-600">Grievance Escalate:</span>
+                  <span id="grievanceContact" class="font-bold text-umber-950">complaints@zerodha.com</span>
+                </div>
+              </div>
+
+              <button onclick="openFraudReportModal()" class="w-full bg-rose-100 hover:bg-rose-200 border border-rose-300 text-rose-900 font-bold py-2 rounded-xl text-xs transition flex items-center justify-center gap-1.5">
+                <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-700"></i>
+                <span>Report Phishing Clone / Fake Broker</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Interactive Cryptographic Hash Tamper Simulator -->
+          <div class="bg-beige-50 rounded-2xl p-5 border border-beige-300 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-beige-200">
+              <div class="flex items-center gap-2">
+                <i data-lucide="shield-alert" class="w-5 h-5 text-lilac-700"></i>
+                <h4 class="text-sm font-extrabold text-umber-950">
+                  Interactive Cryptographic Tamper Simulator (Why Blockchain Prevents Fraud)
+                </h4>
+              </div>
+              <span class="text-xs text-umber-600 font-medium">Test what happens if a scammer modifies even a single character</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+              <div>
+                <label class="font-bold text-umber-800 block mb-1">Simulate Changing Registered Escrow IFSC or Broker Name:</label>
+                <input type="text" id="tamperTestInput" oninput="simulateTamperCheck(this.value)" value="Zerodha Broking Limited | INZ000031633 | Escrow: HDFC0000060" class="w-full bg-white border border-beige-300 p-2.5 rounded-xl font-mono text-xs text-umber-950 focus:outline-none focus:border-lilac-600" />
+              </div>
+              <div>
+                <label class="font-bold text-umber-800 block mb-1">Simulated Real-Time Merkle Verification Status:</label>
+                <div id="tamperResultBox" class="p-2.5 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-300 font-mono text-xs flex items-center justify-between font-bold">
+                  <span>✓ Signature Valid (Hash Matches Block Root)</span>
+                  <span class="text-[10px] bg-emerald-200 px-2 py-0.5 rounded">AUTHENTIC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Public Blockchain Ledger Audit Trail Table -->
+          <div class="bg-white rounded-2xl p-5 border border-beige-300 space-y-3 shadow-sm">
+            <div class="flex items-center justify-between pb-2 border-b border-beige-200">
+              <h4 class="text-sm font-extrabold text-umber-950 flex items-center gap-2">
+                <i data-lucide="scroll-text" class="w-4 h-4 text-lilac-700"></i>
+                <span>Recent Regulatory Ledger Entries (Bharat RegChain Transparency Stream)</span>
+              </h4>
+              <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Live Block Feed</span>
+              </span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-beige-50 text-umber-700 uppercase font-bold border-b border-beige-200">
+                  <tr>
+                    <th class="p-2.5">Block #</th>
+                    <th class="p-2.5">Broker Entity</th>
+                    <th class="p-2.5">Action Type</th>
+                    <th class="p-2.5">SEBI Lic No.</th>
+                    <th class="p-2.5">Status</th>
+                    <th class="p-2.5">Tx Hash</th>
+                  </tr>
+                </thead>
+                <tbody id="blockchainLedgerStream" class="divide-y divide-beige-200 text-umber-900 font-medium">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURE 3: SCAM INSPECTOR ==================== -->
+    <section id="view-scam" class="feature-view hidden space-y-6 max-w-3xl mx-auto">
+      <div class="text-center space-y-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-display text-umber-950">
+          Message & Link Scam Forensics
+        </h1>
+        <p class="text-base sm:text-lg text-umber-800">
+          Audit suspicious SMS, WhatsApp messages, Telegram investment tips, or screenshot captures against 15 regulatory fraud heuristics.
+        </p>
+      </div>
+
+      <!-- Privacy Guarantee Notice Banner with Expandable Explainer -->
+      <div class="bg-emerald-50/90 border border-emerald-300 text-emerald-950 px-4 py-3 rounded-2xl text-xs sm:text-sm shadow-sm transition">
+        <div class="flex items-start sm:items-center justify-between gap-3">
+          <div class="flex items-start sm:items-center gap-2.5">
+            <div class="p-1 rounded-lg bg-emerald-200 text-emerald-900 shrink-0 mt-0.5 sm:mt-0">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </div>
+            <p class="leading-relaxed font-semibold">
+              <strong class="font-extrabold text-emerald-950">Zero-Retention Privacy Guarantee:</strong> No messages, emails, or screenshot data are stored, logged, or sent to any server. All forensic text scans and OCR recognition execute 100% locally in your browser memory.
+            </p>
+          </div>
+          <button type="button" onclick="togglePrivacyDetails()" class="shrink-0 text-[11px] font-bold text-emerald-800 hover:text-emerald-950 underline flex items-center gap-1">
+            <span id="privacyToggleText">Details</span>
+            <i data-lucide="chevron-down" id="privacyToggleIcon" class="w-3.5 h-3.5 transition-transform duration-200"></i>
+          </button>
+        </div>
+        <div id="privacyDetailsBox" class="hidden mt-2 pt-2 border-t border-emerald-200/70 text-xs text-emerald-900/90 space-y-1">
+          <p>• <strong>WebAssembly OCR:</strong> Text extraction from images is handled entirely via an in-memory client worker without cloud uploading.</p>
+          <p>• <strong>Deterministic Heuristic Auditing:</strong> Natural language pattern matching evaluates against SEBI/RBI risk matrices locally on your device.</p>
+          <p>• <strong>Ephemeral Session:</strong> Clearing the text or closing the tab instantly flushes all processed buffers from browser volatile memory.</p>
+        </div>
+      </div>
+
+      <div class="beige-card rounded-3xl p-6 sm:p-7 space-y-5">
+        
+        <!-- Screenshot Paste & OCR Dropzone -->
+        <div id="ocrDropZone" onclick="triggerFileInput()" class="border-2 border-dashed border-beige-300 hover:border-lilac-500 bg-beige-50/70 p-4 sm:p-5 rounded-2xl text-center cursor-pointer transition relative group">
+          <input type="file" id="screenshotUploadInput" accept="image/*" class="hidden" onchange="handleScreenshotUpload(event)" />
+          
+          <div id="ocrDefaultState" class="space-y-1.5">
+            <div class="flex items-center justify-center gap-2 text-umber-900 text-sm font-bold">
+              <div class="p-1.5 rounded-xl bg-lilac-100 text-lilac-700 group-hover:scale-110 transition-transform">
+                <i data-lucide="image-plus" class="w-5 h-5"></i>
+              </div>
+              <span>Paste Screenshot (<kbd class="px-1.5 py-0.5 bg-white border border-beige-300 rounded font-mono text-xs text-umber-800">Ctrl+V</kbd> / <kbd class="px-1.5 py-0.5 bg-white border border-beige-300 rounded font-mono text-xs text-umber-800">⌘+V</kbd>) or Click to Upload</span>
+            </div>
+            <p class="text-xs text-umber-600 font-medium">
+              Drop SMS notifications, WhatsApp tips, Telegram chats, or banking emails (.png, .jpg, .webp)
+            </p>
+            <div class="inline-flex items-center gap-1.5 text-[10px] uppercase font-extrabold tracking-wider text-emerald-800 bg-emerald-100/70 border border-emerald-300/60 px-2 py-0.5 rounded-md mt-1">
+              <i data-lucide="lock" class="w-3 h-3"></i>
+              <span>Zero Server Transmission • 100% In-Browser OCR</span>
+            </div>
+          </div>
+
+          <div id="ocrLoadingState" class="hidden flex flex-col items-center justify-center gap-2 py-3">
+            <div class="flex items-center gap-2 text-sm font-bold text-lilac-700">
+              <span class="w-3 h-3 rounded-full bg-lilac-600 animate-ping"></span>
+              <span id="ocrStatusMsg">Extracting text from image locally...</span>
+            </div>
+            <div class="w-60 bg-beige-200 h-2 rounded-full overflow-hidden">
+              <div id="ocrProgressBar" class="bg-lilac-600 h-2 rounded-full transition-all duration-200" style="width: 35%"></div>
+            </div>
+            <span class="text-[11px] text-umber-600 font-medium">Analyzing characters via client-side OCR engine...</span>
+          </div>
+
+          <div id="ocrPreviewState" class="hidden flex flex-col sm:flex-row items-center justify-between bg-white p-3 rounded-xl border border-beige-300 mt-2 gap-3 shadow-xs">
+            <div class="flex items-center gap-3 w-full sm:w-auto">
+              <img id="ocrThumbnail" class="w-14 h-14 object-cover rounded-lg border border-beige-200 shrink-0" alt="Screenshot Preview" />
+              <div class="text-left min-w-0">
+                <div id="ocrFileName" class="text-xs font-bold text-umber-950 truncate max-w-[220px]">screenshot.png</div>
+                <div class="text-[11px] text-emerald-700 font-semibold flex items-center gap-1 mt-0.5">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                  <span>Text extracted & placed into audit box below</span>
+                </div>
+                <div id="ocrMetaInfo" class="text-[10px] text-umber-500 font-medium">Ready for forensic evaluation</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+              <button type="button" onclick="event.stopPropagation(); triggerFileInput();" class="text-xs text-umber-800 hover:text-umber-950 font-bold px-2.5 py-1.5 rounded-lg bg-beige-100 hover:bg-beige-200 transition border border-beige-300">
+                Replace
+              </button>
+              <button type="button" onclick="event.stopPropagation(); clearOcrPreview();" class="text-xs text-rose-700 hover:text-rose-900 font-bold px-2.5 py-1.5 rounded-lg hover:bg-rose-50 transition border border-rose-200">
+                Clear
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Textarea with Enhanced Top Action Toolbar -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between gap-2">
+            <label for="scamText" class="text-xs font-extrabold uppercase tracking-wider text-umber-800 flex items-center gap-1.5">
+              <span>Message Text or Extracted OCR Content</span>
+            </label>
+            <div class="flex items-center gap-2 text-xs">
+              <span id="scamCharCount" class="text-[11px] font-mono font-medium text-umber-500">0 characters</span>
+              <button type="button" onclick="pasteFromClipboard()" class="text-lilac-700 hover:text-lilac-900 font-bold px-2 py-0.5 rounded-md hover:bg-lilac-50 transition border border-lilac-200 flex items-center gap-1 text-[11px]">
+                <i data-lucide="clipboard" class="w-3 h-3"></i>
+                <span>Paste</span>
+              </button>
+              <button type="button" onclick="clearScamInput()" class="text-rose-700 hover:text-rose-900 font-bold px-2 py-0.5 rounded-md hover:bg-rose-50 transition border border-rose-200 flex items-center gap-1 text-[11px]">
+                <i data-lucide="x" class="w-3 h-3"></i>
+                <span>Clear</span>
+              </button>
+            </div>
+          </div>
+          <div class="relative">
+            <textarea id="scamText" rows="4" oninput="updateCharCount()" class="w-full bg-beige-50 border border-beige-300 p-4 rounded-2xl text-base text-umber-950 placeholder-umber-400 focus:outline-none focus:border-lilac-600 transition" placeholder="Paste unverified SMS, Telegram alert, WhatsApp tip, or click/paste a screenshot above..."></textarea>
+          </div>
+        </div>
+        
+        <!-- Primary Action & Test Scenarios Bar -->
+        <div class="space-y-2.5">
+          <div class="flex flex-col sm:flex-row gap-2.5">
+            <button id="runAuditBtn" onclick="runScamScan()" class="flex-1 bg-lilac-600 hover:bg-lilac-700 active:scale-[0.99] text-white font-bold py-3.5 rounded-2xl text-base transition shadow-sm flex items-center justify-center gap-2 cursor-pointer">
+              <i data-lucide="scan" id="auditBtnIcon" class="w-5 h-5"></i>
+              <span id="auditBtnText">Audit Authenticity & Red Flags</span>
+              <span class="text-[11px] font-mono font-normal opacity-75 hidden sm:inline">(Ctrl+Enter)</span>
+            </button>
+          </div>
+
+          <!-- Scenario Pills with Active Highlight -->
+          <div class="pt-1">
+            <div class="flex items-center justify-between pb-1.5">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-umber-700">Pre-Loaded Test Scenarios:</span>
+              <span class="text-[11px] text-umber-500 font-medium">Click to test instant heuristics</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="sampleScamButtons">
+              <button type="button" data-sample="phishing" onclick="loadSampleScam('phishing')" class="scenario-btn bg-beige-100 hover:bg-beige-200 text-umber-900 font-bold p-2 sm:py-2.5 rounded-xl text-xs transition border border-beige-300 flex flex-col items-center justify-center gap-0.5 text-center">
+                <span class="text-xs">🚨 Phishing KYC</span>
+                <span class="text-[10px] text-umber-600 font-normal">Account suspension</span>
+              </button>
+              <button type="button" data-sample="debit_fraud" onclick="loadSampleScam('debit_fraud')" class="scenario-btn bg-beige-100 hover:bg-beige-200 text-umber-900 font-bold p-2 sm:py-2.5 rounded-xl text-xs transition border border-beige-300 flex flex-col items-center justify-center gap-0.5 text-center">
+                <span class="text-xs">💳 Debit Panic</span>
+                <span class="text-[10px] text-umber-600 font-normal">Dispute PIN trap</span>
+              </button>
+              <button type="button" data-sample="multibagger" onclick="loadSampleScam('multibagger')" class="scenario-btn bg-beige-100 hover:bg-beige-200 text-umber-900 font-bold p-2 sm:py-2.5 rounded-xl text-xs transition border border-beige-300 flex flex-col items-center justify-center gap-0.5 text-center">
+                <span class="text-xs">📈 Pre-IPO Bait</span>
+                <span class="text-[10px] text-umber-600 font-normal">Guaranteed profit</span>
+              </button>
+              <button type="button" data-sample="legit_receipt" onclick="loadSampleScam('legit_receipt')" class="scenario-btn bg-emerald-50 hover:bg-emerald-100 text-emerald-950 font-bold p-2 sm:py-2.5 rounded-xl text-xs transition border border-emerald-300 flex flex-col items-center justify-center gap-0.5 text-center">
+                <span class="text-xs">🧾 Legit Receipt</span>
+                <span class="text-[10px] text-emerald-700 font-normal">Standard POS debit</span>
+              </button>
+              <button type="button" data-sample="legit" onclick="loadSampleScam('legit')" class="scenario-btn bg-emerald-50 hover:bg-emerald-100 text-emerald-950 font-bold p-2 sm:py-2.5 rounded-xl text-xs transition border border-emerald-300 flex flex-col items-center justify-center gap-0.5 text-center">
+                <span class="text-xs">🔑 Official OTP</span>
+                <span class="text-[10px] text-emerald-700 font-normal">Legitimate header</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Forensic Result Card -->
+        <div id="scamResult" class="hidden bg-beige-50 rounded-2xl p-5 sm:p-6 border border-beige-300 space-y-4 mt-4 transition-all duration-300 shadow-xs">
+          
+          <!-- Top Score & Rating Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-beige-200 gap-3">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-umber-600">Genuineness Rating & Confidence</span>
+                <span id="scamRiskBadge" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 border border-rose-300">
+                  CRITICAL THREAT
+                </span>
+              </div>
+              <div id="scamStatusText" class="text-xl sm:text-2xl font-extrabold text-rose-700 mt-0.5">High Risk Detected</div>
+              <p id="scamRiskSummary" class="text-xs text-umber-700 mt-1 leading-relaxed"></p>
+            </div>
+            
+            <div class="text-left sm:text-right shrink-0">
+              <div class="text-3xl sm:text-4xl font-extrabold font-display flex sm:justify-end items-baseline gap-1" id="scamRatingContainer">
+                <span id="scamRating" class="text-rose-700">0.0</span>
+                <span class="text-sm text-umber-500 font-medium">/ 10</span>
+              </div>
+              <span id="scamRatingLabel" class="text-[11px] font-bold text-rose-800 block">High Risk Scam</span>
+            </div>
+          </div>
+
+          <!-- Visual Risk Spectrum Gauge / Score Meter -->
+          <div class="space-y-1.5 pt-1">
+            <div class="flex items-center justify-between text-[11px] font-bold text-umber-700">
+              <span>Risk Spectrum:</span>
+              <span id="scamMeterZoneText" class="font-extrabold text-rose-700">Critical Threat (0 - 3.0)</span>
+            </div>
+            
+            <div class="relative pt-2 pb-1">
+              <!-- Visual Bar -->
+              <div class="h-3 w-full rounded-full overflow-hidden flex bg-beige-200 border border-beige-300">
+                <div class="h-full bg-rose-500" style="width: 30%" title="Critical Threat (0 - 3.0)"></div>
+                <div class="h-full bg-amber-400" style="width: 35%" title="High Suspicion (3.1 - 6.5)"></div>
+                <div class="h-full bg-sky-400" style="width: 20%" title="Moderate Caution (6.6 - 8.4)"></div>
+                <div class="h-full bg-emerald-500" style="width: 15%" title="Verified Authentic (8.5 - 10.0)"></div>
+              </div>
+
+              <!-- Animated Needle/Pointer Pin -->
+              <div id="scamMeterPin" class="absolute top-0 -ml-2 transition-all duration-500 flex flex-col items-center" style="left: 10%;">
+                <div class="w-4 h-4 bg-umber-950 rounded-full border-2 border-white shadow-md flex items-center justify-center">
+                  <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                </div>
+                <div class="w-0.5 h-3 bg-umber-950"></div>
+              </div>
+            </div>
+
+            <!-- Labels below meter -->
+            <div class="grid grid-cols-4 text-[10px] text-umber-600 font-semibold text-center pt-0.5">
+              <span class="text-rose-700">0.0 Critical</span>
+              <span class="text-amber-700">3.0 Suspicious</span>
+              <span class="text-sky-700">6.5 Caution</span>
+              <span class="text-emerald-700">8.5 Genuine</span>
+            </div>
+          </div>
+
+          <!-- 5 Fraud Heuristics Assessment Radar Grid -->
+          <div class="pt-1">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-umber-800">
+                5 Analysis Objectives Forensic Matrix:
+              </h4>
+              <span class="text-[11px] text-umber-500 font-medium">Evaluated against SEBI & RBI rules</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 text-xs" id="scamVectorsGrid">
+              <!-- Dynamically populated across the 5 analysis objectives with contextual icons -->
+            </div>
+          </div>
+
+          <!-- Detected Red Flags & Regulatory Violations -->
+          <div class="pt-1">
+            <div class="flex items-center justify-between mb-1.5">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-umber-800 flex items-center gap-1.5">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600"></i>
+                <span>Detected Red Flags & Heuristic Findings:</span>
+              </h4>
+              <span id="scamFlagCount" class="text-[11px] font-bold text-rose-700 bg-rose-100 px-2 py-0.5 rounded-full">3 Flags Detected</span>
+            </div>
+            <ul id="scamFlags" class="text-sm text-umber-900 space-y-2 list-none pl-0"></ul>
+          </div>
+
+          <!-- Actionable Protective Advice Callout -->
+          <div class="bg-white p-4 rounded-2xl border border-beige-300 text-xs text-umber-850 space-y-2" id="scamAdviceBox">
+            <div class="flex items-center justify-between pb-1 border-b border-beige-200">
+              <span class="font-extrabold uppercase text-[11px] text-umber-950 flex items-center gap-1.5">
+                <i data-lucide="life-buoy" class="w-4 h-4 text-lilac-600"></i>
+                <span>Recommended Protective Action:</span>
+              </span>
+              <span class="text-[10px] uppercase font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">Actionable Guide</span>
+            </div>
+            <div id="scamAdviceText" class="leading-relaxed font-medium"></div>
+          </div>
+
+          <!-- Quick Action Toolbar: Copy, Report, Cross-Check Broker -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-beige-200 text-xs">
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" onclick="copyForensicReport()" id="copyReportBtn" class="bg-white hover:bg-beige-100 text-umber-900 font-bold px-3 py-1.5 rounded-xl border border-beige-300 transition flex items-center gap-1.5 shadow-2xs">
+                <i data-lucide="copy" class="w-3.5 h-3.5 text-lilac-700"></i>
+                <span id="copyReportBtnText">Copy Forensic Report</span>
+              </button>
+              <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" class="bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold px-3 py-1.5 rounded-xl border border-rose-200 transition flex items-center gap-1.5">
+                <i data-lucide="phone-call" class="w-3.5 h-3.5 text-rose-700"></i>
+                <span>Report to 1930 / cybercrime.gov.in</span>
+              </a>
+              <button type="button" onclick="crossCheckBrokerLedger()" id="crossBrokerBtn" class="bg-lilac-50 hover:bg-lilac-100 text-lilac-900 font-bold px-3 py-1.5 rounded-xl border border-lilac-200 transition flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-lilac-700"></i>
+                <span>Verify in Broker Ledger</span>
+              </button>
+            </div>
+            <button type="button" onclick="clearScamInput()" class="text-umber-600 hover:text-umber-900 font-semibold px-2 py-1 transition flex items-center gap-1">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+              <span>Audit Another Message</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FEATURE 3B: VIDEO & REEL AUDITOR ==================== -->
+    <section id="view-video-audit" class="feature-view hidden space-y-6 max-w-4xl mx-auto">
+      <div class="text-center space-y-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-display text-umber-950 flex items-center justify-center gap-2">
+          <span>Finfluencer Video & Reel Authenticity Auditor</span>
+          <span class="text-xs font-sans font-bold bg-lilac-100 text-lilac-700 px-2.5 py-1 rounded-full border border-lilac-300">SEBI HEURISTICS</span>
+        </h1>
+        <p class="text-lg text-umber-800 max-w-2xl mx-auto">
+          Audit financial advice across YouTube videos, Shorts, Instagram Reels, and social media against 6 statutory regulatory pillars. Demystify jargon in layman English, translate to your mother tongue, and report fraudulent creators with 1 click.
+        </p>
+      </div>
+
+      <!-- Main Video Audit Card -->
+      <div class="beige-card rounded-3xl p-6 sm:p-7 space-y-5">
+        
+        <!-- Video URL Input Toolbar -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between gap-2">
+            <label for="videoAuditUrl" class="text-xs font-extrabold uppercase tracking-wider text-umber-800 flex items-center gap-1.5">
+              <i data-lucide="video" class="w-4 h-4 text-lilac-600"></i>
+              <span>YouTube Video / Short / Instagram Reel / Social Media Link</span>
+            </label>
+            <div class="flex items-center gap-2 text-xs">
+              <button type="button" onclick="pasteVideoUrlFromClipboard()" class="text-lilac-700 hover:text-lilac-900 font-bold px-2 py-0.5 rounded-md hover:bg-lilac-50 transition border border-lilac-200 flex items-center gap-1 text-[11px]">
+                <i data-lucide="clipboard" class="w-3 h-3"></i>
+                <span>Paste Link</span>
+              </button>
+              <button type="button" onclick="clearVideoAuditInput()" class="text-rose-700 hover:text-rose-900 font-bold px-2 py-0.5 rounded-md hover:bg-rose-50 transition border border-rose-200 flex items-center gap-1 text-[11px]">
+                <i data-lucide="x" class="w-3 h-3"></i>
+                <span>Clear</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="relative flex flex-col sm:flex-row gap-2">
+            <div class="relative flex-1">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-umber-400">
+                <i data-lucide="link" class="w-4 h-4"></i>
+              </div>
+              <input type="url" id="videoAuditUrl" placeholder="https://www.youtube.com/watch?v=... or https://instagram.com/reel/..." class="w-full bg-beige-50 border border-beige-300 pl-10 pr-4 py-3.5 rounded-2xl text-base text-umber-950 placeholder-umber-400 focus:outline-none focus:border-lilac-600 transition" />
+            </div>
+            <button id="runVideoAuditBtn" onclick="runVideoAudit()" class="bg-lilac-600 hover:bg-lilac-700 active:scale-[0.99] text-white font-bold px-6 py-3.5 rounded-2xl text-base transition shadow-sm flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+              <i data-lucide="sparkles" id="videoAuditBtnIcon" class="w-5 h-5"></i>
+              <span id="videoAuditBtnText">Audit Video Advice</span>
+            </button>
+          </div>
+
+          <!-- Optional Context Dropdown / Input -->
+          <div class="pt-1">
+            <button type="button" onclick="toggleVideoContextField()" class="text-[11px] font-bold text-umber-600 hover:text-umber-900 flex items-center gap-1 transition">
+              <i data-lucide="sliders-horizontal" class="w-3 h-3"></i>
+              <span id="videoContextToggleText">+ Add title / description / transcript snippet (optional)</span>
+            </button>
+            <div id="videoContextWrapper" class="hidden mt-2 space-y-1">
+              <textarea id="videoAuditContext" rows="2" class="w-full bg-beige-50 border border-beige-300 p-3 rounded-xl text-xs text-umber-950 placeholder-umber-400 focus:outline-none focus:border-lilac-600" placeholder="Paste video title, pinned comment, creator claims, or transcript excerpt if available..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pre-Loaded Benchmark Scenarios -->
+        <div class="pt-1 space-y-2 border-t border-beige-200">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-umber-700">Pre-Loaded Finfluencer Benchmark Cases:</span>
+            <span class="text-[11px] text-umber-500 font-medium">Click to test instant regulatory audit</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="sampleVideoButtons">
+            <button type="button" onclick="loadSampleVideo('banknifty_vip')" class="sample-video-btn bg-beige-100 hover:bg-beige-200 text-umber-900 font-bold p-2.5 rounded-xl text-xs transition border border-beige-300 flex flex-col items-center justify-center gap-0.5 text-center">
+              <span class="text-xs">🚨 F&O Jackpot</span>
+              <span class="text-[10px] text-umber-600 font-normal">10% Daily + Telegram VIP</span>
+            </button>
+            <button type="button" onclick="loadSampleVideo('penny_pump')" class="sample-video-btn bg-beige-100 hover:bg-beige-200 text-umber-900 font-bold p-2.5 rounded-xl text-xs transition border border-beige-300 flex flex-col items-center justify-center gap-0.5 text-center">
+              <span class="text-xs">⚠️ Penny Pump</span>
+              <span class="text-[10px] text-umber-600 font-normal">₹2.50 Breakout + Offshore</span>
+            </button>
+            <button type="button" onclick="loadSampleVideo('zero_hero')" class="sample-video-btn bg-beige-100 hover:bg-beige-200 text-umber-900 font-bold p-2.5 rounded-xl text-xs transition border border-beige-300 flex flex-col items-center justify-center gap-0.5 text-center">
+              <span class="text-xs">🛑 Expiry Trap</span>
+              <span class="text-[10px] text-umber-600 font-normal">Zero-Hero 100% Win Rate</span>
+            </button>
+            <button type="button" onclick="loadSampleVideo('legit_pe')" class="sample-video-btn bg-emerald-50 hover:bg-emerald-100 text-emerald-950 font-bold p-2.5 rounded-xl text-xs transition border border-emerald-300 flex flex-col items-center justify-center gap-0.5 text-center">
+              <span class="text-xs">✅ SEBI Analyst</span>
+              <span class="text-[10px] text-emerald-700 font-normal">P/E Fundamental Guide</span>
+            </button>
+            <button type="button" onclick="loadSampleVideo('legit_index')" class="sample-video-btn bg-emerald-50 hover:bg-emerald-100 text-emerald-950 font-bold p-2.5 rounded-xl text-xs transition border border-emerald-300 flex flex-col items-center justify-center gap-0.5 text-center">
+              <span class="text-xs">✅ Index Literacy</span>
+              <span class="text-[10px] text-emerald-700 font-normal">Expense Ratios & Risks</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Audit Output Card -->
+        <div id="videoAuditResult" class="hidden space-y-6 pt-2">
+
+          <!-- Video Metadata & Creator Identification Card -->
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border border-beige-300 shadow-xs space-y-3">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="relative shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden bg-umber-950 flex items-center justify-center text-white border border-beige-300">
+                  <img id="videoThumbImg" src="" alt="Video Thumbnail" class="w-full h-full object-cover hidden" />
+                  <div id="videoThumbFallback" class="flex flex-col items-center justify-center text-xs">
+                    <i data-lucide="play-circle" class="w-7 h-7 text-lilac-400"></i>
+                  </div>
+                  <span id="videoPlatformBadge" class="absolute bottom-1 right-1 text-[9px] font-extrabold uppercase bg-umber-950/90 text-white px-1.5 py-0.2 rounded">YOUTUBE</span>
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span id="videoChannelTag" class="text-xs font-bold text-lilac-700 truncate max-w-[200px]">Channel Name</span>
+                    <span id="videoRegStatusPill" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 border border-rose-200">
+                      UNREGISTERED CREATOR
+                    </span>
+                  </div>
+                  <h3 id="videoTitleDisplay" class="text-base sm:text-lg font-extrabold text-umber-950 leading-snug line-clamp-2 mt-0.5">
+                    Video Title Display
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-3 text-xs text-umber-600 mt-1">
+                    <span id="videoMetricsText">245K Views • 14:20 min</span>
+                    <span class="text-beige-400">•</span>
+                    <span id="videoTargetAsset" class="font-semibold text-umber-800">Target: BankNifty Options</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- In-Built Reporting CTA Button (Top Right) -->
+              <div id="topReportBtnWrapper" class="shrink-0 w-full sm:w-auto">
+                <button type="button" onclick="openVideoReportModal()" class="w-full sm:w-auto bg-rose-50 hover:bg-rose-100 text-rose-800 hover:text-rose-950 font-bold px-3.5 py-2.5 rounded-xl border border-rose-300 transition flex items-center justify-center gap-1.5 text-xs shadow-2xs">
+                  <i data-lucide="flag" class="w-4 h-4 text-rose-600"></i>
+                  <span>Report Deceptive Video</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Video Source Description & Transcript Excerpt of Pasted Link -->
+            <div class="pt-3 border-t border-beige-200">
+              <div class="flex items-center justify-between text-xs font-bold text-umber-800 mb-1.5">
+                <span class="flex items-center gap-1.5">
+                  <i data-lucide="file-text" class="w-4 h-4 text-lilac-600"></i>
+                  <span>Video Description & Extracted Claims (from Pasted Link):</span>
+                </span>
+                <span id="videoSourceOriginTag" class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+                  Extracted from Source
+                </span>
+              </div>
+              <div id="videoDescriptionDisplay" class="text-xs text-umber-900 bg-beige-50/80 p-3.5 rounded-xl border border-beige-300 leading-relaxed font-medium whitespace-pre-line max-h-36 overflow-y-auto">
+                <!-- Dynamically populated with the real video description of the pasted video -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Overall Authenticity Score Banner -->
+          <div class="bg-beige-50 rounded-2xl p-5 sm:p-6 border border-beige-300 space-y-4">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-beige-200 gap-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-umber-600">Video Advice Authenticity Index</span>
+                  <span id="videoRiskBadge" class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 border border-rose-300">
+                    CRITICAL HAZARD
+                  </span>
+                </div>
+                <div id="videoVerdictHeadline" class="text-xl sm:text-2xl font-extrabold text-rose-700 mt-0.5">
+                  Unlicensed High-Risk Finfluencer Solicitation
+                </div>
+                <p id="videoVerdictSubtext" class="text-xs text-umber-700 mt-1 leading-relaxed max-w-xl">
+                  Violates SEBI statutory guidelines on mandatory research licensing, return guarantees, and private signal funneling.
+                </p>
+              </div>
+
+              <div class="text-left sm:text-right shrink-0">
+                <div class="text-3xl sm:text-4xl font-extrabold font-display flex sm:justify-end items-baseline gap-1">
+                  <span id="videoScoreNum" class="text-rose-700">1.8</span>
+                  <span class="text-sm text-umber-500 font-medium">/ 10</span>
+                </div>
+                <span id="videoScoreLabel" class="text-[11px] font-bold text-rose-800 block">Severe Red Flags</span>
+              </div>
+            </div>
+
+            <!-- Score Gauge Meter -->
+            <div class="space-y-1.5 pt-1">
+              <div class="flex items-center justify-between text-[11px] font-bold text-umber-700">
+                <span>Regulatory Safety Rating:</span>
+                <span id="videoMeterZoneLabel" class="font-extrabold text-rose-700">Deceptive Finfluencer Trap (0.0 - 4.0)</span>
+              </div>
+              <div class="relative pt-2 pb-1">
+                <div class="h-3 w-full rounded-full overflow-hidden flex bg-beige-200 border border-beige-300">
+                  <div class="h-full bg-rose-500" style="width: 40%" title="Unauthentic Trap (0 - 4.0)"></div>
+                  <div class="h-full bg-amber-400" style="width: 30%" title="Suspicious / Unverified (4.1 - 7.0)"></div>
+                  <div class="h-full bg-emerald-500" style="width: 30%" title="Verified Authentic & Educational (7.1 - 10.0)"></div>
+                </div>
+                <div id="videoMeterPin" class="absolute top-0 -ml-2 transition-all duration-500 flex flex-col items-center" style="left: 18%;">
+                  <div class="w-4 h-4 bg-umber-950 rounded-full border-2 border-white shadow-md flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                  </div>
+                  <div class="w-0.5 h-3 bg-umber-950"></div>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 text-[10px] text-umber-600 font-semibold text-center pt-0.5">
+                <span class="text-rose-700">0.0 Unauthentic / Trap</span>
+                <span class="text-amber-700">4.1 Suspicious Claims</span>
+                <span class="text-emerald-700">7.1 Verified Educational</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 6 CORE REGULATORY & VERIFICATION HEURISTICS BREAKDOWN -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="text-sm sm:text-base font-extrabold text-umber-950 flex items-center gap-2">
+                  <i data-lucide="scale" class="w-4 h-4 text-lilac-600"></i>
+                  <span>6 Core Regulatory & Verification Heuristics</span>
+                </h3>
+                <p class="text-xs text-umber-600">Strictly evaluated against SEBI (Research Analysts) Regulations & ASCI advertising mandates.</p>
+              </div>
+              <span id="violationCountBadge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-300">
+                5 Violations Found
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="sixPillarsContainer">
+              <!-- Pillar 1 to 6 Cards rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- IN-BUILT REPORTING DRAWER (Requirement b) -->
+          <div id="builtInReportCard" class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-5 space-y-3 shadow-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-xl bg-rose-100 text-rose-700 shrink-0 mt-0.5">
+                  <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-extrabold text-rose-950">In-Built Fraud & Finfluencer Reporting Portal</h4>
+                  <p class="text-xs text-rose-800 mt-0.5">
+                    This video breaches statutory Indian securities guidelines. Protect fellow retail investors by filing an official report.
+                  </p>
+                </div>
+              </div>
+              <button type="button" onclick="openVideoReportModal()" class="shrink-0 bg-rose-700 hover:bg-rose-800 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                <span>File Regulatory Report Now</span>
+              </button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 pt-2 border-t border-rose-200 text-xs">
+              <a href="https://scores.sebi.gov.in" target="_blank" rel="noopener noreferrer" class="bg-white/80 hover:bg-white p-2 rounded-xl border border-rose-200 text-center font-bold text-rose-900 transition flex items-center justify-center gap-1">
+                <span>SEBI SCORES 2.0</span>
+                <i data-lucide="external-link" class="w-3 h-3 text-rose-600"></i>
+              </a>
+              <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" class="bg-white/80 hover:bg-white p-2 rounded-xl border border-rose-200 text-center font-bold text-rose-900 transition flex items-center justify-center gap-1">
+                <span>CyberCrime Helpline 1930</span>
+                <i data-lucide="external-link" class="w-3 h-3 text-rose-600"></i>
+              </a>
+              <a href="https://www.mca.gov.in" target="_blank" rel="noopener noreferrer" class="bg-white/80 hover:bg-white p-2 rounded-xl border border-rose-200 text-center font-bold text-rose-900 transition flex items-center justify-center gap-1">
+                <span>MCA Shell Company Flag</span>
+                <i data-lucide="external-link" class="w-3 h-3 text-rose-600"></i>
+              </a>
+              <button type="button" onclick="copyOfficialComplaintText()" id="copyComplaintBtn" class="bg-white/80 hover:bg-white p-2 rounded-xl border border-rose-200 text-center font-bold text-rose-900 transition flex items-center justify-center gap-1">
+                <i data-lucide="copy" class="w-3 h-3 text-rose-600"></i>
+                <span id="copyComplaintBtnText">Copy Evidence Dossier</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- REQUIREMENT C: FINANCIAL TERMS DEMYSTIFIED (LAYMAN ENGLISH + REGIONAL TRANSLATIONS) -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-beige-300 space-y-4 shadow-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-beige-200 gap-3">
+              <div>
+                <h3 class="text-base font-extrabold text-umber-950 flex items-center gap-2">
+                  <i data-lucide="book-open-check" class="w-5 h-5 text-lilac-600"></i>
+                  <span>Financial Terms Demystified in Layman English</span>
+                </h3>
+                <p class="text-xs text-umber-600 mt-0.5">
+                  Complex jargon mentioned in this video explained simply with zero math, plus verified translations in Indian languages.
+                </p>
+              </div>
+
+              <!-- Regional Language Selector for Definitions -->
+              <div class="flex items-center gap-2">
+                <label for="termLanguageSelect" class="text-xs font-bold text-umber-800 whitespace-nowrap">Translate Definitions To:</label>
+                <select id="termLanguageSelect" onchange="changeTermLanguage(this.value)" class="bg-beige-50 border border-beige-300 text-xs font-bold text-umber-900 py-1.5 px-3 rounded-xl focus:outline-none focus:border-lilac-600 cursor-pointer">
+                  <option value="en">English (Plain Layman)</option>
+                  <option value="hi" selected>हिन्दी (Hindi)</option>
+                  <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                  <option value="mr">मराठी (Marathi)</option>
+                  <option value="bn">বাংলা (Bengali)</option>
+                  <option value="ta">தமிழ் (Tamil)</option>
+                  <option value="te">తెలుగు (Telugu)</option>
+                  <option value="gu">ગુજરાતી (Gujarati)</option>
+                  <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                  <option value="ml">മലയാളം (Malayalam)</option>
+                  <option value="or">ଓଡ଼ିଆ (Odia)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Term Cards Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="videoTermsContainer">
+              <!-- Dynamically populated with Layman English + Selected Regional Translation -->
+            </div>
+
+            <!-- Custom Term Demystifier Search -->
+            <div class="pt-2 border-t border-beige-200 flex flex-col sm:flex-row items-center gap-2">
+              <span class="text-xs font-bold text-umber-800 whitespace-nowrap">Demystify any other term from video:</span>
+              <div class="relative flex-1 w-full">
+                <input type="text" id="customTermInput" placeholder="Enter term (e.g. Option Greeks, Stop Loss, NAV, Beta)..." class="w-full bg-beige-50 border border-beige-300 py-2 pl-3 pr-20 rounded-xl text-xs text-umber-950 focus:outline-none focus:border-lilac-600" />
+                <button type="button" onclick="explainCustomTerm()" class="absolute right-1 top-1 bottom-1 bg-lilac-600 hover:bg-lilac-700 text-white font-bold px-3 rounded-lg text-xs transition">
+                  Explain
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- REQUIREMENT D: VIDEO SUMMARY IN SELECTED REGIONAL LANGUAGE -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-beige-300 space-y-4 shadow-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-beige-200 gap-3">
+              <div>
+                <h3 class="text-base font-extrabold text-umber-950 flex items-center gap-2">
+                  <i data-lucide="file-text" class="w-5 h-5 text-lilac-600"></i>
+                  <span>Video Summary & Investor Takeaways</span>
+                </h3>
+                <p class="text-xs text-umber-600 mt-0.5">
+                  Objective summary of creator claims, hidden risks, and regulatory assessment in your mother tongue.
+                </p>
+              </div>
+
+              <!-- Summary Language Selector -->
+              <div class="flex items-center gap-2">
+                <label for="summaryLanguageSelect" class="text-xs font-bold text-umber-800 whitespace-nowrap">Summary Language:</label>
+                <select id="summaryLanguageSelect" onchange="changeSummaryLanguage(this.value)" class="bg-beige-50 border border-beige-300 text-xs font-bold text-umber-900 py-1.5 px-3 rounded-xl focus:outline-none focus:border-lilac-600 cursor-pointer">
+                  <option value="en">English</option>
+                  <option value="hi" selected>हिन्दी (Hindi)</option>
+                  <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                  <option value="mr">मराठी (Marathi)</option>
+                  <option value="bn">বাংলা (Bengali)</option>
+                  <option value="ta">தமிழ் (Tamil)</option>
+                  <option value="te">తెలుగు (Telugu)</option>
+                  <option value="gu">ગુજરાતી (Gujarati)</option>
+                  <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                  <option value="ml">മലയാളം (Malayalam)</option>
+                  <option value="or">ଓଡ଼ିଆ (Odia)</option>
+                </select>
+                <button type="button" onclick="speakVideoSummary()" id="summarySpeakBtn" title="Listen Aloud" class="p-2 bg-beige-100 hover:bg-beige-200 rounded-xl text-umber-800 border border-beige-300 transition">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Summary Content Rendered Dynamically -->
+            <div id="videoSummaryContainer" class="space-y-3 text-sm leading-relaxed">
+              <!-- Rendered via renderVideoSummary() -->
+            </div>
+          </div>
+
+          <!-- Bottom Actions Toolbar -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <div class="flex flex-wrap items-center gap-2 text-xs">
+              <button type="button" onclick="copyFullVideoAuditReport()" id="copyVideoAuditBtn" class="bg-white hover:bg-beige-100 text-umber-900 font-bold px-3.5 py-2 rounded-xl border border-beige-300 transition flex items-center gap-1.5 shadow-2xs">
+                <i data-lucide="copy" class="w-3.5 h-3.5 text-lilac-700"></i>
+                <span id="copyVideoAuditBtnText">Copy Full Video Audit Dossier</span>
+              </button>
+              <button type="button" onclick="openVideoReportModal()" class="bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold px-3.5 py-2 rounded-xl border border-rose-200 transition flex items-center gap-1.5">
+                <i data-lucide="flag" class="w-3.5 h-3.5 text-rose-700"></i>
+                <span>Report Video</span>
+              </button>
+            </div>
+            <button type="button" onclick="clearVideoAuditInput()" class="text-xs text-umber-600 hover:text-umber-900 font-semibold px-2 py-1 transition flex items-center gap-1">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+              <span>Audit Another Video</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FEATURE 4: STOCK & SHELL SCREENER ==================== -->
+    <section id="view-stock" class="feature-view hidden space-y-6">
+      <div class="text-center space-y-2 max-w-3xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-display text-umber-950">
+          NSE Stock Screener & Shell Company Detection
+        </h1>
+        <p class="text-lg text-umber-800">
+          Audit operational legitimacy, physical registered addresses, ASM/GSM surveillance lists, and 30-day normalized trends. Suspected dummy entities are flagged immediately.
+        </p>
+      </div>
+
+      <div class="relative max-w-2xl mx-auto">
+        <input type="text" id="stockInput" oninput="liveStockSearch(this.value)" placeholder="Search company (Tata Motors, Reliance, FakeTech)..." class="w-full bg-white border border-beige-300 p-4 rounded-2xl text-base font-semibold text-umber-950 focus:outline-none focus:border-lilac-600 shadow-sm" />
+        <div id="stockDropdown" class="absolute left-0 right-0 mt-2 bg-white border border-beige-300 rounded-2xl shadow-xl z-30 hidden overflow-hidden"></div>
+      </div>
+
+      <div id="stockAuditCard" class="space-y-5">
+        <div id="stockBanner" class="p-5 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-50 border-emerald-300">
+          <div>
+            <h3 id="stockTitle" class="text-xl font-extrabold font-display text-umber-950">Tata Motors Ltd (TATAMOTORS) - ₹945.50</h3>
+            <p id="shellStatusText" class="text-sm text-umber-700 mt-0.5">Active & Compliant (ROC Mumbai) | Physical Headquarter Verified (Bombay House, Mumbai)</p>
+          </div>
+          <span id="shellTag" class="text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-300 self-start sm:self-auto">
+            OPERATIONAL COMPANY
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 items-start">
+          <div class="lg:col-span-1 beige-card rounded-2xl p-5 border border-beige-300 space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-umber-700 block">30-Day Normalized Trend</span>
+              <span id="chartPointsCount" class="text-[10px] font-bold text-lilac-700 bg-lilac-100 px-2 py-0.5 rounded">30 Days</span>
+            </div>
+            <div class="relative w-full h-56 min-h-[224px]">
+              <canvas id="stockTrendCanvas"></canvas>
+            </div>
+          </div>
+
+          <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-beige-300 text-sm space-y-2.5 shadow-sm">
+              <span class="font-extrabold text-lilac-700 text-base uppercase tracking-wider flex items-center space-x-1.5">
+                <i data-lucide="hourglass" class="w-4 h-4"></i>
+                <span>Long Term</span>
+              </span>
+              <p class="font-bold text-emerald-700 uppercase text-xs pt-1">Pros</p>
+              <ul id="ltPros" class="list-disc pl-4 text-umber-800 space-y-1"></ul>
+              <p class="font-bold text-rose-700 uppercase text-xs pt-2 border-t border-beige-200">Cons</p>
+              <ul id="ltCons" class="list-disc pl-4 text-umber-800 space-y-1"></ul>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-beige-300 text-sm space-y-2.5 shadow-sm">
+              <span class="font-extrabold text-cyan-800 text-base uppercase tracking-wider flex items-center space-x-1.5">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+                <span>Short Term</span>
+              </span>
+              <p class="font-bold text-emerald-700 uppercase text-xs pt-1">Pros</p>
+              <ul id="stPros" class="list-disc pl-4 text-umber-800 space-y-1"></ul>
+              <p class="font-bold text-rose-700 uppercase text-xs pt-2 border-t border-beige-200">Cons</p>
+              <ul id="stCons" class="list-disc pl-4 text-umber-800 space-y-1"></ul>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-beige-300 text-sm space-y-2.5 shadow-sm">
+              <span class="font-extrabold text-amber-800 text-base uppercase tracking-wider flex items-center space-x-1.5">
+                <i data-lucide="zap" class="w-4 h-4"></i>
+                <span>Intraday</span>
+              </span>
+              <p class="font-bold text-emerald-700 uppercase text-xs pt-1">Pros</p>
+              <ul id="intraPros" class="list-disc pl-4 text-umber-800 space-y-1"></ul>
+              <p class="font-bold text-rose-700 uppercase text-xs pt-2 border-t border-beige-200">Cons</p>
+              <ul id="intraCons" class="list-disc pl-4 text-umber-800 space-y-1"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURE 5: PAPER TRADING & TILT GUARD ==================== -->
+    <section id="view-paper" class="feature-view hidden space-y-6">
+      <div class="text-center space-y-2 max-w-3xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-display text-umber-950">
+          Inbuilt Paper Trading & Tilt Interceptor
+        </h1>
+        <p class="text-lg text-umber-800">
+          Execute zero-risk simulated trades. The behavioral watchdog monitors order pacing and lot-size multipliers, fully customizable to your trading discipline.
+        </p>
+      </div>
+
+      <div class="beige-card p-6 rounded-3xl space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-beige-200 gap-3">
+          <div class="flex items-center space-x-3">
+            <div class="p-2.5 rounded-xl bg-lilac-100 text-lilac-700">
+              <i data-lucide="sliders" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-base text-umber-950">Behavioral Tilt Watchdog Configuration</h3>
+              <p class="text-xs text-umber-700">Fine-tune or disable rapid execution and Martingale loss-recovery tripwires.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-3 self-start sm:self-auto">
+            <span class="text-xs font-bold uppercase tracking-wider text-umber-700">Watchdog Status:</span>
+            <button id="watchdogToggleBtn" onclick="toggleWatchdogActive()" class="flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm bg-emerald-600 hover:bg-emerald-700 text-white">
+              <i id="watchdogToggleIcon" data-lucide="shield-check" class="w-4 h-4"></i>
+              <span id="watchdogToggleLabel">ACTIVE (PROTECTED)</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="watchdogControlsGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+          <div>
+            <label class="text-xs font-extrabold uppercase tracking-wider text-umber-700 block mb-1">Max Order Threshold</label>
+            <select id="cfgOrderThreshold" onchange="updateWatchdogConfig()" class="w-full bg-beige-50 border border-beige-300 p-3 rounded-xl text-sm font-semibold text-umber-950">
+              <option value="2">2 Orders (Ultra Sensitive)</option>
+              <option value="3" selected>3 Orders (Standard Default)</option>
+              <option value="4">4 Orders (Moderate)</option>
+              <option value="5">5 Orders (High Frequency)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-xs font-extrabold uppercase tracking-wider text-umber-700 block mb-1">Monitoring Time Window</label>
+            <select id="cfgTimeWindow" onchange="updateWatchdogConfig()" class="w-full bg-beige-50 border border-beige-300 p-3 rounded-xl text-sm font-semibold text-umber-950">
+              <option value="15">15 Seconds</option>
+              <option value="30">30 Seconds</option>
+              <option value="45" selected>45 Seconds (Standard Default)</option>
+              <option value="60">60 Seconds</option>
+              <option value="90">90 Seconds</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-xs font-extrabold uppercase tracking-wider text-umber-700 block mb-1">Martingale Lot Escalation</label>
+            <select id="cfgLotMultiplier" onchange="updateWatchdogConfig()" class="w-full bg-beige-50 border border-beige-300 p-3 rounded-xl text-sm font-semibold text-umber-950">
+              <option value="1.5">1.5x Lot Increase</option>
+              <option value="2.0" selected>2.0x (Position Doubling)</option>
+              <option value="2.5">2.5x Lot Increase</option>
+              <option value="3.0">3.0x Lot Increase</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div class="beige-card p-6 rounded-3xl space-y-4">
+          <div class="flex justify-between items-center pb-2 border-b border-beige-200">
+            <span class="text-xs font-bold uppercase tracking-wider text-umber-700">Paper Capital</span>
+            <span class="text-xs font-bold bg-lilac-100 text-lilac-700 border border-lilac-200 px-2 py-0.5 rounded">Risk Free</span>
+          </div>
+          <div id="portfolioCapital" class="text-3xl font-extrabold font-display text-emerald-700">₹10,00,000.00</div>
+
+          <div class="space-y-3 pt-1">
+            <div>
+              <label class="text-xs font-bold text-umber-700 block mb-1">Select Asset</label>
+              <select id="tradeAsset" class="w-full bg-beige-50 border border-beige-300 p-3 rounded-xl text-sm font-semibold text-umber-950">
+                <option value="TATAMOTORS">TATAMOTORS (₹945.50)</option>
+                <option value="RELIANCE">RELIANCE (₹2,920.00)</option>
+                <option value="FAKETECH">FAKETECH (₹2.45 - Shell Corp)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-xs font-bold text-umber-700 block mb-1">Quantity / Lot Size</label>
+              <input type="number" id="tradeQuantity" value="50" min="1" class="w-full bg-beige-50 border border-beige-300 p-3 rounded-xl text-base font-semibold text-umber-950 focus:outline-none" />
+            </div>
+
+            <div class="flex space-x-3 pt-2">
+              <button onclick="submitPaperOrder('BUY')" class="flex-1 bg-emerald-700 hover:bg-emerald-800 text-white py-3 rounded-xl text-sm font-bold transition shadow-sm">
+                BUY / LONG
+              </button>
+              <button onclick="submitPaperOrder('SELL')" class="flex-1 bg-rose-700 hover:bg-rose-800 text-white py-3 rounded-xl text-sm font-bold transition shadow-sm">
+                SELL / SHORT
+              </button>
+            </div>
+
+            <div class="pt-3 border-t border-beige-200">
+              <button onclick="triggerRevengeSimulation()" class="w-full bg-amber-100 hover:bg-amber-200 border border-amber-300 text-amber-900 py-2.5 rounded-xl text-xs font-bold transition">
+                Simulate Rapid Trade Burst (Trigger Test)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 beige-card p-6 rounded-3xl space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-beige-200">
+            <span class="text-sm font-bold uppercase tracking-wider text-umber-800">Live Execution Ledger</span>
+            <span id="currentThresholdIndicator" class="text-xs text-umber-600 font-semibold">Watchdog: <strong class="text-umber-950">3 orders / 45s</strong></span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-beige-50 text-umber-700 uppercase font-bold border-b border-beige-300">
+                <tr>
+                  <th class="p-3">Time</th>
+                  <th class="p-3">Asset</th>
+                  <th class="p-3">Type</th>
+                  <th class="p-3">Quantity</th>
+                  <th class="p-3">Price</th>
+                  <th class="p-3">Status</th>
+                </tr>
+              </thead>
+              <tbody id="tradeLogTable" class="divide-y divide-beige-200 text-umber-900 font-medium">
+                <tr><td colspan="6" class="p-6 text-center text-umber-500">No simulated executions recorded yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURE 6: GRIEVANCE & GOVT PORTALS ==================== -->
+    <section id="view-grievance" class="feature-view hidden space-y-6 max-w-4xl mx-auto">
+      <div class="text-center space-y-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-display text-umber-950">
+          Official Grievance & Cybercrime Redressal
+        </h1>
+        <p class="text-lg text-umber-800">
+          Direct step-by-step pathways to report fraud, freeze illicit bank transfers, and file formal complaints with Indian regulatory bodies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="beige-card p-6 rounded-3xl space-y-3 flex flex-col justify-between">
+          <div>
+            <h3 class="font-extrabold text-lg text-rose-800">National Cyber Crime Reporting Portal</h3>
+            <p class="text-sm text-umber-700 mt-1">For unauthorized banking debits, UPI phishing, fake trading APKs, and extortion schemes.</p>
+            <div class="text-base font-extrabold text-rose-900 mt-2">Emergency Helpline: 1930</div>
+          </div>
+          <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" class="mt-4 block text-center bg-rose-600 hover:bg-rose-700 text-white py-3 rounded-xl text-sm font-bold transition">
+            cybercrime.gov.in ↗
+          </a>
+        </div>
+
+        <div class="beige-card p-6 rounded-3xl space-y-3 flex flex-col justify-between">
+          <div>
+            <h3 class="font-extrabold text-lg text-lilac-800">SEBI SCORES 2.0 Redressal</h3>
+            <p class="text-sm text-umber-700 mt-1">For registered broker misconduct, order execution glitches, and listed company manipulation.</p>
+            <div class="text-base font-extrabold text-lilac-900 mt-2">Toll Free: 1800 22 7575</div>
+          </div>
+          <a href="https://scores.sebi.gov.in" target="_blank" rel="noopener noreferrer" class="mt-4 block text-center bg-lilac-700 hover:bg-lilac-800 text-white py-3 rounded-xl text-sm font-bold transition">
+            scores.sebi.gov.in ↗
+          </a>
+        </div>
+
+        <div class="beige-card p-6 rounded-3xl space-y-3 flex flex-col justify-between">
+          <div>
+            <h3 class="font-extrabold text-lg text-emerald-800">RBI SACHET Portal</h3>
+            <p class="text-sm text-umber-700 mt-1">Report illegal multi-level marketing (MLM) schemes, unlicensed NBFCs, and fraudulent deposit schemes.</p>
+            <div class="text-base font-extrabold text-emerald-900 mt-2">Central Bank Portal</div>
+          </div>
+          <a href="https://sachet.rbi.org.in" target="_blank" rel="noopener noreferrer" class="mt-4 block text-center bg-emerald-700 hover:bg-emerald-800 text-white py-3 rounded-xl text-sm font-bold transition">
+            sachet.rbi.org.in ↗
+          </a>
+        </div>
+
+        <div class="beige-card p-6 rounded-3xl space-y-3 flex flex-col justify-between">
+          <div>
+            <h3 class="font-extrabold text-lg text-amber-800">MCA21 Corporate Registry</h3>
+            <p class="text-sm text-umber-700 mt-1">Inspect corporate master data, check director disqualifications (DIN), or flag dummy shell companies.</p>
+            <div class="text-base font-extrabold text-amber-900 mt-2">Ministry of Corporate Affairs</div>
+          </div>
+          <a href="https://www.mca.gov.in" target="_blank" rel="noopener noreferrer" class="mt-4 block text-center bg-amber-700 hover:bg-amber-800 text-white py-3 rounded-xl text-sm font-bold transition">
+            mca.gov.in ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-beige-200/80 border-t border-beige-300 py-6 px-6 text-center text-sm text-umber-700 space-y-1 mt-auto">
+    <p class="font-bold text-umber-900">SurakshaTrade Investor Protection Suite • Built for National Financial Literacy</p>
+    <p>Zero explicit buy/sell investment advice given. Regulatory compliance aligned with SEBI & MCA statutory guidelines.</p>
+  </footer>
+
+  <!-- ==================== TILT INTERVENTION MODAL ==================== -->
+  <div id="tiltModal" class="fixed inset-0 bg-umber-950/85 backdrop-blur-md flex items-center justify-center p-6 z-50 hidden">
+    <div class="max-w-md w-full bg-white border border-lilac-300 rounded-3xl p-8 text-center space-y-6 shadow-2xl">
+      <div class="w-20 h-20 rounded-full bg-lilac-100 border-2 border-lilac-400 flex items-center justify-center mx-auto breathe-ring">
+        <i data-lucide="heart-pulse" class="w-9 h-9 text-lilac-700"></i>
+      </div>
+      <div>
+        <span class="text-xs uppercase font-extrabold tracking-widest text-lilac-700 bg-lilac-100 border border-lilac-300 px-3.5 py-1 rounded-full">
+          Tilt Watchdog Activated
+        </span>
+        <h3 class="text-2xl font-extrabold text-umber-950 font-display mt-3">Pause. Take a Deep Breath.</h3>
+        <p id="tiltReason" class="text-sm text-umber-700 mt-2 leading-relaxed"></p>
+      </div>
+
+      <div class="bg-beige-100 p-4 rounded-2xl border border-beige-300 text-sm text-umber-900 font-medium">
+        Inhale slowly through your nose (4s) • Hold (4s) • Exhale completely (4s).
+      </div>
+
+      <button id="tiltBtn" disabled class="w-full bg-beige-300 text-umber-600 font-bold py-4 rounded-xl text-sm cursor-not-allowed transition">
+        Cooldown Active (<span id="tiltTimer">15</span>s)
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== BROKER OAUTH MODAL ==================== -->
+  <div id="oauthModal" class="fixed inset-0 bg-umber-950/80 backdrop-blur-sm flex items-center justify-center p-6 z-50 hidden">
+    <div class="max-w-md w-full bg-white rounded-3xl p-6 space-y-4 border border-beige-300 shadow-2xl">
+      <div class="flex justify-between items-center pb-3 border-b border-beige-200">
+        <h3 class="font-extrabold text-lg text-umber-950 font-display">Broker Direct OAuth Grant</h3>
+        <button onclick="closeOAuthModal()" class="text-umber-500 hover:text-umber-900 font-bold text-lg">✕</button>
+      </div>
+      <p class="text-sm text-umber-700 leading-relaxed">
+        Grant SurakshaTrade read-only API access to your broker to monitor order pacing, detect Martingale size spikes, and prevent tilt.
+      </p>
+      <div class="space-y-2.5">
+        <button onclick="authorizeBroker('Zerodha Kite')" class="w-full bg-beige-50 hover:bg-beige-100 border border-beige-300 p-3.5 rounded-xl flex justify-between items-center text-sm font-semibold transition">
+          <span class="text-umber-950 font-bold">Zerodha Kite Connect</span>
+          <span class="text-lilac-700 font-extrabold">Authorize ↗</span>
+        </button>
+        <button onclick="authorizeBroker('Upstox API')" class="w-full bg-beige-50 hover:bg-beige-100 border border-beige-300 p-3.5 rounded-xl flex justify-between items-center text-sm font-semibold transition">
+          <span class="text-umber-950 font-bold">Upstox API</span>
+          <span class="text-lilac-700 font-extrabold">Authorize ↗</span>
+        </button>
+        <button onclick="authorizeBroker('Angel One API')" class="w-full bg-beige-50 hover:bg-beige-100 border border-beige-300 p-3.5 rounded-xl flex justify-between items-center text-sm font-semibold transition">
+          <span class="text-umber-950 font-bold">Angel One SmartAPI</span>
+          <span class="text-lilac-700 font-extrabold">Authorize ↗</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FRAUD REPORT MODAL ==================== -->
+  <div id="fraudReportModal" class="fixed inset-0 bg-umber-950/80 backdrop-blur-sm flex items-center justify-center p-6 z-50 hidden">
+    <div class="max-w-md w-full bg-white rounded-3xl p-6 space-y-4 border border-rose-300 shadow-2xl">
+      <div class="flex justify-between items-center pb-3 border-b border-beige-200">
+        <h3 class="font-extrabold text-lg text-rose-900 font-display flex items-center gap-2">
+          <i data-lucide="alert-octagon" class="w-5 h-5 text-rose-600"></i>
+          <span>Report Fraud Broker / Phishing Link</span>
+        </h3>
+        <button onclick="closeFraudReportModal()" class="text-umber-500 hover:text-umber-900 font-bold text-lg">✕</button>
+      </div>
+      <p class="text-sm text-umber-700">
+        Discovered a fake broker website, fraudulent Telegram channel, or spoofed KYC link? Submit it to anchor an alert on the RegChain blacklist:
+      </p>
+      <div class="space-y-3">
+        <input type="text" id="reportBrokerName" placeholder="Fake Broker Name / Link (e.g., kite-vip-trade.org)" class="w-full bg-beige-50 border border-beige-300 p-3 rounded-xl text-sm font-semibold text-umber-950 focus:outline-none" />
+        <textarea id="reportDetails" rows="3" placeholder="Description: e.g. Promised 50% weekly returns, asked for money transfer to private UPI handle..." class="w-full bg-beige-50 border border-beige-300 p-3 rounded-xl text-sm text-umber-950 focus:outline-none"></textarea>
+        <button onclick="submitFraudReport()" class="w-full bg-rose-700 hover:bg-rose-800 text-white font-bold py-3 rounded-xl text-sm transition shadow-sm">
+          Submit to Blockchain Blacklist Registry
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== VIDEO AUDIT REPORT MODAL ==================== -->
+  <div id="videoReportModal" class="fixed inset-0 bg-umber-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 z-50 hidden">
+    <div class="max-w-lg w-full bg-white rounded-3xl p-6 space-y-4 border border-rose-300 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center pb-3 border-b border-beige-200">
+        <div class="flex items-center gap-2">
+          <div class="p-2 rounded-xl bg-rose-100 text-rose-700">
+            <i data-lucide="flag" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-lg text-rose-950 font-display">Report Deceptive Video & Creator</h3>
+            <p class="text-[11px] text-rose-700 font-semibold">Regulatory Grievance & RegChain Community Blacklist</p>
+          </div>
+        </div>
+        <button onclick="closeVideoReportModal()" class="text-umber-500 hover:text-umber-900 font-bold text-lg p-1">✕</button>
+      </div>
+
+      <div id="videoReportFormState" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-bold text-umber-800 mb-1">Target Video Link / Post URL:</label>
+          <input type="text" id="reportVideoUrl" readonly class="w-full bg-beige-50 border border-beige-300 p-2.5 rounded-xl text-xs font-semibold text-umber-950" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-umber-800 mb-1">Creator / Channel Name:</label>
+          <input type="text" id="reportCreatorName" class="w-full bg-beige-50 border border-beige-300 p-2.5 rounded-xl text-xs font-semibold text-umber-950" placeholder="e.g. SuperTrader Rohit / @wealth_secrets" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-umber-800 mb-1">Detected Regulatory Violations (SEBI & ASCI):</label>
+          <div class="bg-beige-50 p-3 rounded-xl border border-beige-300 space-y-1.5 text-xs text-umber-900" id="reportViolationsChecklist">
+            <label class="flex items-center gap-2">
+              <input type="checkbox" id="violUnregistered" checked class="rounded text-rose-600 focus:ring-rose-500" />
+              <span>Unregistered Investment Advice / Stock Tips (SEBI RA Regs 2014)</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" id="violGuaranteed" checked class="rounded text-rose-600 focus:ring-rose-500" />
+              <span>Guaranteed / Risk-Free Return Claims (Omission of capital loss)</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" id="violTelegram" checked class="rounded text-rose-600 focus:ring-rose-500" />
+              <span>Funneling to Private VIP Telegram / WhatsApp Signal Groups</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" id="violOffshore" checked class="rounded text-rose-600 focus:ring-rose-500" />
+              <span>Promotion of Unregulated Offshore FX/Binary Brokers via Affiliate Links</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-umber-800 mb-1">Additional Evidence / Notes (Optional):</label>
+          <textarea id="reportAdditionalNotes" rows="2" placeholder="e.g. Timestamp 03:15 creator claimed 10% daily returns, pinned comment contains referral code..." class="w-full bg-beige-50 border border-beige-300 p-2.5 rounded-xl text-xs text-umber-950 focus:outline-none focus:border-lilac-600"></textarea>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          <button type="button" onclick="submitVideoReport()" class="w-full bg-rose-700 hover:bg-rose-800 active:scale-[0.99] text-white font-bold py-3 rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-2">
+            <i data-lucide="shield-alert" class="w-4 h-4"></i>
+            <span>Submit to RegChain Blacklist & Generate Formal Dossier</span>
+          </button>
+          
+          <div class="flex items-center justify-between text-[11px] text-umber-600 font-semibold px-1">
+            <span>Also report directly to official portals:</span>
+            <a href="https://scores.sebi.gov.in" target="_blank" rel="noopener noreferrer" class="text-rose-700 underline font-bold flex items-center gap-0.5">
+              <span>SEBI SCORES 2.0 ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Confirmation State (shown after submission) -->
+      <div id="videoReportSuccessState" class="hidden space-y-4 py-2 text-center">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto border-2 border-emerald-300">
+          <i data-lucide="check" class="w-7 h-7"></i>
+        </div>
+        <div>
+          <h4 class="text-base font-extrabold text-umber-950">Report Anchored to Blacklist!</h4>
+          <p class="text-xs text-umber-700 mt-1 max-w-sm mx-auto">
+            Grievance successfully recorded on SurakshaTrade RegChain decentralized fraud registry.
+          </p>
+          <div class="mt-2 inline-block font-mono text-[11px] bg-beige-100 px-3 py-1 rounded-lg border border-beige-300 text-umber-900 font-bold" id="videoReportRefToken">
+            REF-SEBI-2026-X892
+          </div>
+        </div>
+        <div class="bg-beige-50 p-3 rounded-xl border border-beige-300 text-left text-xs text-umber-900 space-y-1">
+          <p class="font-bold text-umber-950">Next Steps for Investor Protection:</p>
+          <p>• Your complaint has been added to the public scam registry to protect other retail users.</p>
+          <p>• Copy the pre-formatted evidence dossier below to submit on the official SEBI SCORES portal.</p>
+        </div>
+        <div class="flex gap-2">
+          <button type="button" onclick="copyOfficialComplaintText()" class="flex-1 bg-lilac-600 hover:bg-lilac-700 text-white font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-1.5">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span>Copy Complaint Text</span>
+          </button>
+          <button type="button" onclick="closeVideoReportModal()" class="px-4 bg-beige-200 hover:bg-beige-300 text-umber-900 font-bold py-2.5 rounded-xl text-xs transition">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/src/prototype.js"></script>
+</body>
+</html>
