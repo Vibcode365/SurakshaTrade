@@ -1,4 +1,4 @@
-# FinSafe — Financial Advice Authenticity Auditor & Scam Detection Suite
+# SurakshaTrade — Financial Advice Authenticity Auditor & Scam Detection Suite
 
 A comprehensive financial investor safety platform featuring real-time verification of social media financial advice, YouTube/Instagram reels authenticity checks against regulatory heuristics, multilingual layman explanations, and broker verification.
 
